@@ -1,0 +1,21 @@
+{
+  "name": "monitoring-d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development npm run server",
+    "serve": "NODE_ENV=production npm run server",
+    "server": "babel-node --presets env -- index.js",
+    "client": "node start-client.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "express": "^4.16.3",
+    "request": "^2.85.0"
+  }
+}
