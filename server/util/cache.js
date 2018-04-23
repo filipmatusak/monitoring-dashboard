@@ -2,13 +2,14 @@ import cache from 'memory-cache';
 import { decode } from './jwt';
 
 export const saveRefreshToken = (token) => {
-  const decoded = decode(token.accessToken);
-  console.log("decoded = " + decoded);
-  cache.put(`${decoded.sub}`, token.refreshToken);
+  const decoded = decode(token.access_token);
+  console.log("decoded = " + JSON.stringify(decoded));
+  console.log("access token = " + token.access_token);
+  cache.put(`${decoded.sub}`, token.refresh_token);
 };
 
 export const removeRefreshToken = (token) => {
-  const decoded = decode(token.accessToken);
+  const decoded = decode(token.access_token);
   cache.remove(decoded.sub);
 };
 

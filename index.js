@@ -17,16 +17,17 @@ const app = express();
 
 const authApiUrl = process.env.AUTH_URL;
 const directoryUrl = process.env.DIRECTORY_URL;
+const oauthPublicKey = process.env.OAUTH_PUBLIC_KEY;
 
 app.use(bodyParser.json());
 
-const getUserFromAuth = token => {
+const getUserFromAuth = access_token => {
   return new Promise((resolve, reject) => {
     request.get(
       {
         headers: {
           "content-type": "application/json",
-          Authorization: "Bearer " + token.access_token
+          'Authorization': "Bearer " + access_token
         },
         url: authApiUrl + "/users/me"
       },
@@ -97,23 +98,26 @@ const prepareData = async user => {
 app.get("/data", async (req, res) => {
   const authHeader = req.get("authorization");
   const token = authHeader.split(" ")[1];
-  // todo: verify token
-  console.log("request");
-  let user = jwt.decode(token);
-  console.log("user = " + user);
+  let user = await getUserFromAuth(token);
+  if(user.error) res.status(401).json({
+    errorType: "No access",
+    errorMessage: "Invalid email or password"
+  });
+
+  console.log("user = " + JSON.stringify(user));
+  console.log("token = " + JSON.stringify(token));
+
+  let data = await prepareData(user);
+  res.send(data); 
 });
 
 app.post("/login", async (req, res) => {
   try {
     let token = await singInAuth(req.body);
-    let user = await getUserFromAuth(token);
-    // let data = await prepareData(user);
-
-    // delete user.operation_ids;
-    console.log("token = " + JSON.stringify(token));
+    
     saveRefreshToken(token);
 
-    res.send({ token: token.access_token, user: user });
+    res.send({ token: token.access_token });
   } catch (err) {
     console.log(err);
     res.status(401).json({
