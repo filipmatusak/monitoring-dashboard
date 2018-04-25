@@ -161,9 +161,12 @@ app.get("/data", async (req, res) => {
 app.post("/login", async (req, res) => {
   try {
     let token = await singInAuth(req.body);
-    
+    if(token.error){
+      sendNoAccess(res);
+      return;
+    }
+
     saveRefreshToken(token);
-    console.log("refresh token = " + token.refresh_token);
 
     res.send({ token: token.access_token });
   } catch (err) {

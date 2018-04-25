@@ -5,7 +5,7 @@ import jwt from "../../util/jwt";
 class Dashboard extends Component {
   fetchData = () => {
     const token = jwt.getToken();
-    console.log("token = " + token);
+    //console.log("token = " + token);
     return axios
       .request("GET", {
         url: "/data",
