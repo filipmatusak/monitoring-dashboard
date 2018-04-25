@@ -5,7 +5,7 @@ import Button from 'react-toolbox/lib/button/Button';
 import axios from 'axios'
 import jwt from '../../util/jwt'
 
-//import style from './loginStyle.scss';
+import style from './loginStyle.css';
 
 
 class Login extends Component {
@@ -49,15 +49,15 @@ class Login extends Component {
 
     render() {
         return (
-          <div /*styleName="login-screen-container"*/>
-            <div /*styleName="login-wrapper"*/>
-              <div /*styleName="header-wrapper"*/>
+          <div className="login-screen-container">
+            <div className="login-wrapper">
+              <div className="header-wrapper">
                 <span>Admin Console</span>
               </div>
     
               {
                 this.props.errorMessage &&
-                  <div /*styleName="login-error-msg"*/>
+                  <div className="login-error-msg">
                     <span>{this.props.errorMessage}</span>
                   </div>
               }
@@ -90,7 +90,7 @@ class Login extends Component {
                   required
                 />
     
-                <div /*styleName="login-button-wrapper"*/>
+                <div className="login-button-wrapper">
                   <Button
                     label={this.props.isSigningIn ? 'Signing in...' : 'Sign in'}
                     raised
