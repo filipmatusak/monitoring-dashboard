@@ -52,7 +52,7 @@ class Login extends Component {
           <div className="login-screen-container">
             <div className="login-wrapper">
               <div className="header-wrapper">
-                <span>Admin Console</span>
+                <span>Monitoring Dashboard</span>
               </div>
     
               {
