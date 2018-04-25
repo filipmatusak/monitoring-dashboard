@@ -1,11 +1,24 @@
 import React, { Component } from "react";
 import axios from "axios";
 import jwt from "../../util/jwt";
+import ProgressBar from "react-toolbox/lib/progress_bar";
+
+import Organization from "./Organization";
+
+import { Accordion } from "react-accessible-accordion";
+
+// Demo styles, see 'Styles' section below for some notes on use.
+import "react-accessible-accordion/dist/fancy-example.css";
+
+import "./style.css";
 
 class Dashboard extends Component {
   fetchData = () => {
     const token = jwt.getToken();
     //console.log("token = " + token);
+    this.setState({
+      loading: true
+    });
     return axios
       .request("GET", {
         url: "/data",
@@ -14,6 +27,12 @@ class Dashboard extends Component {
           "content-type": "application/json"
         }
       })
+      .then(data => {
+        this.setState({
+          loading: false
+        });
+        return data;
+      })
       .catch(error => {
         console.log("error");
         return { error: "unauthorized" };
@@ -21,24 +40,34 @@ class Dashboard extends Component {
   };
 
   state = {
-    data: {}
+    data: [],
+    organizations: []
   };
 
   async componentDidMount() {
     const data = await this.fetchData();
+
     if (data.error) {
       this.props.history.push("/login");
+      return;
     } else {
       this.setState({
-        data: data.data
+        data: data.data,
+        organizationsComps: data.data.map(group => {
+          return <Organization props={group} />;
+        })
       });
     }
   }
 
   render() {
-    const { data } = this.state;
-    console.log(data);
-    return <p>dashboard</p>;
+    console.log(this.state);
+    const { organizationsComps } = this.state;
+    if (this.state.loading) {
+      return <ProgressBar type="circular" mode="indeterminate" />;
+    } else {
+      return <Accordion accordion={false}>{organizationsComps}</Accordion>;
+    }
   }
 }
 

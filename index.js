@@ -1,6 +1,10 @@
 "use strict";
 
-import { saveRefreshToken, removeRefreshToken, getRefreshToken } from "./server/util/cache";
+import {
+  saveRefreshToken,
+  removeRefreshToken,
+  getRefreshToken
+} from "./server/util/cache";
 import jwt from "./server/util/jwt";
 
 const express = require("express");
@@ -9,6 +13,7 @@ const querystring = require("querystring");
 const zlib = require("zlib");
 const request = require("request");
 const bodyParser = require("body-parser");
+const groupArray = require("group-array");
 
 const PORT = 3001;
 const HOST = "0.0.0.0";
@@ -27,7 +32,7 @@ const getUserFromAuth = access_token => {
       {
         headers: {
           "content-type": "application/json",
-          'Authorization': "Bearer " + access_token
+          Authorization: "Bearer " + access_token
         },
         url: authApiUrl + "/users/me"
       },
@@ -46,8 +51,9 @@ const refreshAccessToken = refresh_token => {
           "content-type": "application/json"
         },
         url: authApiUrl + "/oauth/token"
-      },{
-        grant_type: 'refresh_token',
+      },
+      {
+        grant_type: "refresh_token",
         refresh_token: refreshToken
       },
       function(err, response, body) {
@@ -100,18 +106,62 @@ const getDevice = device_id => {
   });
 };
 
+const getOperation = operation_id => {
+  return new Promise((resolve, reject) => {
+    request.get(
+      {
+        headers: { "content-type": "application/json" },
+        url: directoryUrl + "/operations/" + operation_id
+      },
+      function(err, response, body) {
+        resolve(JSON.parse(body));
+      }
+    );
+  });
+};
+
+const getOrganization = organization_id => {
+  return new Promise((resolve, reject) => {
+    request.get(
+      {
+        headers: { "content-type": "application/json" },
+        url: directoryUrl + "/organizations/" + organization_id
+      },
+      function(err, response, body) {
+        resolve(JSON.parse(body));
+      }
+    );
+  });
+};
+
 const prepareData = async user => {
-  return Promise.all(
-    user.operation_ids.map(async operation_id => {
-      let allocations = await getAllocationsForOperation(operation_id);
-      let devices = await Promise.all(
+  const operations = await Promise.all(
+    user.operation_ids.slice(1, 20).map(async operation_id => {
+      const operation = await getOperation(operation_id);
+      const allocations = await getAllocationsForOperation(operation_id);
+      const devices = await Promise.all(
         allocations.map(allocation => {
           return getDevice(allocation.device_id);
         })
       );
-      return { operation_id: operation_id, devices: devices };
+      return {
+        operation: operation,
+        devices: devices
+      };
     })
   );
+
+  let grouped = groupArray(operations, "operation.organization_id");
+
+  let data = await Promise.all(Object.keys(grouped)
+    .map(key => grouped[key])
+    .map(async group => {
+
+      let organization = await getOrganization(group[0].operation.organization_id);
+      return { organization: organization, operations: group };
+    }));
+
+    return data;
 };
 
 const sendNoAccess = res => {
@@ -119,41 +169,39 @@ const sendNoAccess = res => {
     errorType: "No access",
     errorMessage: "Invalid email or password"
   });
-}
+};
 
 app.get("/data", async (req, res) => {
   const authHeader = req.get("authorization");
-  if (!authHeader || authHeader.length < 20){ 
+  if (!authHeader || authHeader.length < 20) {
     console.log("without header");
     sendNoAccess(res);
   } else {
-    const token = authHeader.split(" ")[1];  
-    console.log("token from header = " + token + " " + authHeader + " " + authHeader.length);
+    const token = authHeader.split(" ")[1];
     let user = await getUserFromAuth(token);
-    console.log("user = " + JSON.stringify(user));
-    if(user.error) {
+    // console.log("user = " + JSON.stringify(user));
+    if (user.error) {
       // try refresh token
       const refreshToken = getRefreshToken(token);
       console.log("from cache = " + refreshToken);
-      if (refreshToken === null || refreshToken === undefined) { 
+      if (refreshToken === null || refreshToken === undefined) {
         console.log("without refresh token");
         sendNoAccess(res);
-      }
-      else {
+      } else {
         console.log("refresh token = " + refreshToken);
         let freshToken = await refreshAccessToken(refreshToken);
         saveRefreshToken(freshToken);
         user = await getUserFromAuth(freshToken);
         let data = await prepareData(user);
-        console.log("user = " + JSON.stringify(user));
+        //  console.log("user = " + JSON.stringify(user));
         //console.log("token = " + JSON.stringify(freshToken));
-        res.send(data); 
+        res.send(data);
       }
     } else {
       let data = await prepareData(user);
-      console.log("user = " + JSON.stringify(user));
-     //console.log("token = " + JSON.stringify(token));
-      res.send(data); 
+      //  console.log("user = " + JSON.stringify(user));
+      //console.log("token = " + JSON.stringify(token));
+      res.send(data);
     }
   }
 });
@@ -161,7 +209,8 @@ app.get("/data", async (req, res) => {
 app.post("/login", async (req, res) => {
   try {
     let token = await singInAuth(req.body);
-    if(token.error){
+    console.log(token);
+    if (token.error) {
       sendNoAccess(res);
       return;
     }
@@ -171,10 +220,7 @@ app.post("/login", async (req, res) => {
     res.send({ token: token.access_token });
   } catch (err) {
     console.log(err);
-    res.status(401).json({
-      errorType: "No access",
-      errorMessage: "Invalid email or password"
-    });
+    sendNoAccess(res);
   }
 });
 
