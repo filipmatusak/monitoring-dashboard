@@ -5,7 +5,6 @@ const invalidate = () => {
 };
 
 const setToken = (token) => {
-  debugger;
   localStorage.setItem(LOCAL_STORAGE_ACCESS_TOKEN_KEY, token);
 };
 

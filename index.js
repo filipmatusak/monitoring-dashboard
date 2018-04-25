@@ -1,6 +1,6 @@
 "use strict";
 
-import { saveRefreshToken } from "./server/util/cache";
+import { saveRefreshToken, removeRefreshToken, getRefreshToken } from "./server/util/cache";
 import jwt from "./server/util/jwt";
 
 const express = require("express");
@@ -30,6 +30,25 @@ const getUserFromAuth = access_token => {
           'Authorization': "Bearer " + access_token
         },
         url: authApiUrl + "/users/me"
+      },
+      function(err, response, body) {
+        resolve(JSON.parse(body));
+      }
+    );
+  });
+};
+
+const refreshAccessToken = refresh_token => {
+  return new Promise((resolve, reject) => {
+    request.post(
+      {
+        headers: {
+          "content-type": "application/json"
+        },
+        url: authApiUrl + "/oauth/token"
+      },{
+        grant_type: 'refresh_token',
+        refresh_token: refreshToken
       },
       function(err, response, body) {
         resolve(JSON.parse(body));
@@ -95,20 +114,48 @@ const prepareData = async user => {
   );
 };
 
-app.get("/data", async (req, res) => {
-  const authHeader = req.get("authorization");
-  const token = authHeader.split(" ")[1];
-  let user = await getUserFromAuth(token);
-  if(user.error) res.status(401).json({
+const sendNoAccess = res => {
+  res.status(401).json({
     errorType: "No access",
     errorMessage: "Invalid email or password"
   });
+}
 
-  console.log("user = " + JSON.stringify(user));
-  console.log("token = " + JSON.stringify(token));
-
-  let data = await prepareData(user);
-  res.send(data); 
+app.get("/data", async (req, res) => {
+  const authHeader = req.get("authorization");
+  if (!authHeader || authHeader.length < 20){ 
+    console.log("without header");
+    sendNoAccess(res);
+  } else {
+    const token = authHeader.split(" ")[1];  
+    console.log("token from header = " + token + " " + authHeader + " " + authHeader.length);
+    let user = await getUserFromAuth(token);
+    console.log("user = " + JSON.stringify(user));
+    if(user.error) {
+      // try refresh token
+      const refreshToken = getRefreshToken(token);
+      console.log("from cache = " + refreshToken);
+      if (refreshToken === null || refreshToken === undefined) { 
+        console.log("without refresh token");
+        sendNoAccess(res);
+      }
+      else {
+        console.log("refresh token = " + refreshToken);
+        let freshToken = await refreshAccessToken(refreshToken);
+        saveRefreshToken(freshToken);
+        user = await getUserFromAuth(freshToken);
+        let data = await prepareData(user);
+        console.log("user = " + JSON.stringify(user));
+        //console.log("token = " + JSON.stringify(freshToken));
+        res.send(data); 
+      }
+    } else {
+      let data = await prepareData(user);
+      console.log("user = " + JSON.stringify(user));
+     //console.log("token = " + JSON.stringify(token));
+      res.send(data); 
+    }
+  }
 });
 
 app.post("/login", async (req, res) => {
@@ -116,6 +163,7 @@ app.post("/login", async (req, res) => {
     let token = await singInAuth(req.body);
     
     saveRefreshToken(token);
+    console.log("refresh token = " + token.refresh_token);
 
     res.send({ token: token.access_token });
   } catch (err) {

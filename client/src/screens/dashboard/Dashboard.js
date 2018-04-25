@@ -6,13 +6,18 @@ class Dashboard extends Component {
   fetchData = () => {
     const token = jwt.getToken();
     console.log("token = " + token);
-    return axios.request("GET", {
-      url: "/data",
-      headers: {
-        authorization: "Bearer " + token,
-        "content-type": "application/json"
-      }
-    });
+    return axios
+      .request("GET", {
+        url: "/data",
+        headers: {
+          authorization: "Bearer " + token,
+          "content-type": "application/json"
+        }
+      })
+      .catch(error => {
+        console.log("error");
+        return { error: "unauthorized" };
+      });
   };
 
   state = {
@@ -21,9 +26,13 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     const data = await this.fetchData();
-    this.setState({
-      data: data.data
-    });
+    if (data.error) {
+      this.props.history.push("/login");
+    } else {
+      this.setState({
+        data: data.data
+      });
+    }
   }
 
   render() {

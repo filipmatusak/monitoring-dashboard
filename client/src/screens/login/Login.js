@@ -28,9 +28,6 @@ class Login extends Component {
         axios
           .post(`/login`, credentials)
           .then((data) => {
-            console.log('dataaaa = ' + JSON.stringify(data));
-            console.log('dataaaa token = ' + JSON.stringify(data.data.token));
-            console.log('dataaaa token = ' + JSON.stringify(data['token']));
             jwt.setToken(data.data.token);
     
             resolve(data.user);
