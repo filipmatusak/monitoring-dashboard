@@ -8,7 +8,8 @@
     "start": "NODE_ENV=development npm run server",
     "serve": "NODE_ENV=production npm run server",
     "server": "babel-node --presets env -- index.js",
-    "client": "node start-client.js"
+    "client": "node start-client.js",
+    "toolbox": "react-toolbox-themr"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +26,21 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-toolbox": "^2.0.0-beta.12",
+    "react-toolbox-themr": "^1.0.2",
     "request": "^2.85.0"
-  }
+  },
+  "reactToolbox": {
+    "include": [
+        "BUTTON",
+        "INPUT"
+    ],
+    "customProperties": {
+        "animation-duration": "0.3s",
+        "color-accent": "var(--palette-pink-a200)",
+        "color-accent-dark": "var(--palette-pink-700)",
+        "color-primary-contrast": "var(--color-dark-contrast)",
+        "color-accent-contrast": "var(--color-dark-contrast)"
+    },
+    "output": "client/src/assets/react-toolbox"
+}
 }

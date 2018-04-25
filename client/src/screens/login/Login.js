@@ -5,7 +5,7 @@ import Button from 'react-toolbox/lib/button/Button';
 import axios from 'axios'
 import jwt from '../../util/jwt'
 
-import style from './loginStyle.css';
+import './loginStyle.css';
 
 
 class Login extends Component {
