@@ -179,7 +179,7 @@ app.get("/data", async (req, res) => {
   } else {
     const token = authHeader.split(" ")[1];
     let user = await getUserFromAuth(token);
-    // console.log("user = " + JSON.stringify(user));
+     console.log("user = " + JSON.stringify(user));
     if (user.error) {
       // try refresh token
       const refreshToken = getRefreshToken(token);
@@ -200,11 +200,12 @@ app.get("/data", async (req, res) => {
     } else {
       let data = await prepareData(user);
       //  console.log("user = " + JSON.stringify(user));
-      //console.log("token = " + JSON.stringify(token));
+      console.log("token = " + JSON.stringify(token));
       res.send(data);
     }
   }
-});
+}); 
+
 
 app.post("/login", async (req, res) => {
   try {
