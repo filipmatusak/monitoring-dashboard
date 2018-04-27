@@ -1,4 +1,5 @@
 import React from "react";
+import Table from "react-toolbox/lib/table";
 
 import {
   Accordion,
@@ -7,30 +8,35 @@ import {
   AccordionItemBody
 } from "react-accessible-accordion";
 
-import Device from './Device';
+import Device from "./Device";
 
 class Operation extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      operation: props.props.operation,
-      devices: props.props.devices,
-      deviceComps: props.props.devices.map(d => <Device props={d}/>)
+      operation: props.operation,
+      devices: props.devices,
+      deviceComps: props.devices.map(d => <Device device={d} />)
     };
   }
 
   render() {
-    const { deviceComps } = this.state;
+    const { deviceComps, operation } = this.state;
     return (
       <AccordionItem>
         <AccordionItemTitle>
-          <div className="device-title-wrapper">
-            <p>{this.state.operation.name}</p>
+          <div className="operation-title">
+            <div className="operation-name">
+              <p>{operation.name}</p>
+            </div>
+            <div className="operations-modules">
+              {operation.modules.map(m => <p>{m}</p>)}
+            </div>
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>
-        <Accordion accordion={false}>{deviceComps}</Accordion>
+          
         </AccordionItemBody>
       </AccordionItem>
     );

@@ -37,7 +37,8 @@
     "include": [
       "BUTTON",
       "INPUT",
-      "PROGRESS_BAR"
+      "PROGRESS_BAR",
+      "TABLE"
     ],
     "customProperties": {
       "animation-duration": "0.3s",

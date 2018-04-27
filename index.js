@@ -54,7 +54,7 @@ const refreshAccessToken = refresh_token => {
       },
       {
         grant_type: "refresh_token",
-        refresh_token: refreshToken
+        refresh_token: refresh_token
       },
       function(err, response, body) {
         resolve(JSON.parse(body));
@@ -134,16 +134,35 @@ const getOrganization = organization_id => {
   });
 };
 
+const getOutages = operation_id => {
+  const d = new Date();
+  const time = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+  return new Promise((resolve, reject) => {
+    request.get(
+      {
+        headers: { "content-type": "application/json" },
+        url: directoryUrl + "/outages?operation_id=" + operation_id + "&start=" + time + "&end=" + time
+      },
+      function(err, response, body) {
+        resolve(JSON.parse(body));
+      }
+    );
+  });
+};
+
 const prepareData = async user => {
   const operations = await Promise.all(
     user.operation_ids.slice(1, 20).map(async operation_id => {
       const operation = await getOperation(operation_id);
+      const outages = await getOutages(operation_id);
       const allocations = await getAllocationsForOperation(operation_id);
       const devices = await Promise.all(
         allocations.map(allocation => {
           return getDevice(allocation.device_id);
         })
       );
+      operation.outages = outages;
+      operation.modules = Array.from(new Set(outages.flatMap(o => o.modules)));
       return {
         operation: operation,
         devices: devices
@@ -153,11 +172,11 @@ const prepareData = async user => {
 
   let grouped = groupArray(operations, "operation.organization_id");
 
-  let data = await Promise.all(Object.keys(grouped)
-    .map(key => grouped[key])
+  let data = await Promise.all(Object.values(grouped)
     .map(async group => {
-
-      let organization = await getOrganization(group[0].operation.organization_id);
+      const organization = await getOrganization(group[0].operation.organization_id);
+      organization.operationsCount = group.length;
+      organization.operationsWithoutOutages = group.filter(op => op.operation.outages.length == 0).length;
       return { organization: organization, operations: group };
     }));
 
@@ -179,7 +198,7 @@ app.get("/data", async (req, res) => {
   } else {
     const token = authHeader.split(" ")[1];
     let user = await getUserFromAuth(token);
-     console.log("user = " + JSON.stringify(user));
+   //  console.log("user = " + JSON.stringify(user));
     if (user.error) {
       // try refresh token
       const refreshToken = getRefreshToken(token);

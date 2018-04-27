@@ -14,23 +14,30 @@ class Organization extends React.Component {
     super(props);
 
     this.state = {
-      organization: props.props.organization,
-      operations: props.props.operations,
-      operationComps: props.props.operations.map(op => <Operation props={op} />)
+      organization: props.group.organization,
+      operations: props.group.operations,
+      operationComps: props.group.operations.map(op => (
+        <Operation operation={op.operation} devices={op.devices} />
+      ))
     };
   }
 
   render() {
-    const { operationComps } = this.state;
+    const { operationComps, organization } = this.state;
     return (
       <AccordionItem>
         <AccordionItemTitle>
-          <div className="device-title-wrapper">
-            <p>{this.state.organization.name}</p>
+          <div className="organization-title">
+            <div className="organization-name">
+              <p>{organization.name}</p>
+            </div>
+            <div className="organization-operations-status">
+              <p>{organization.operationsWithoutOutages}/{organization.operationsCount}</p>
+            </div>
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>
-          <Accordion accordion={false}>{operationComps}</Accordion>
+          <Accordion accordion={false} >{operationComps}</Accordion>
         </AccordionItemBody>
       </AccordionItem>
     );

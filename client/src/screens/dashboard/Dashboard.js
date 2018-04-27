@@ -2,20 +2,16 @@ import React, { Component } from "react";
 import axios from "axios";
 import jwt from "../../util/jwt";
 import ProgressBar from "react-toolbox/lib/progress_bar";
+import { Accordion } from "react-accessible-accordion";
 
 import Organization from "./Organization";
 
-import { Accordion } from "react-accessible-accordion";
-
-// Demo styles, see 'Styles' section below for some notes on use.
 import "react-accessible-accordion/dist/fancy-example.css";
-
 import "./style.css";
 
 class Dashboard extends Component {
   fetchData = () => {
     const token = jwt.getToken();
-    //console.log("token = " + token);
     this.setState({
       loading: true
     });
@@ -40,8 +36,7 @@ class Dashboard extends Component {
   };
 
   state = {
-    data: [],
-    organizations: []
+    data: []
   };
 
   async componentDidMount() {
@@ -54,7 +49,7 @@ class Dashboard extends Component {
       this.setState({
         data: data.data,
         organizationsComps: data.data.map(group => {
-          return <Organization props={group} />;
+          return <Organization group={group} />;
         })
       });
     }
