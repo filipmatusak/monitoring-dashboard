@@ -45,7 +45,7 @@ class Organization extends React.Component {
               Operations: {organization.operationsCount}
             </div>
             <div className="organization-operations-status">
-              OK: {organization.operationsCount - organization.operationsWithOutages - organization.operationsWithSuspicious}
+              OK: {organization.okOperations}
             </div>
             <div className="organization-operations-status">
               With outages: {organization.operationsWithOutages}

@@ -40,7 +40,7 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     const data = await this.fetchData();
-  
+
     if (data.error) {
       this.props.history.push("/login");
       return;
@@ -48,8 +48,9 @@ class Dashboard extends Component {
       this.setState({
         data: data.data,
         organizationsComps: data.data.map(group => {
-          
-          return <Organization group={group} key={"org_" + group.organization._id}/>;
+          return (
+            <Organization group={group} key={"org_" + group.organization._id} />
+          );
         })
       });
     }
@@ -61,7 +62,11 @@ class Dashboard extends Component {
     if (this.state.loading) {
       return <ProgressBar type="circular" mode="indeterminate" />;
     } else {
-      return <Accordion accordion={false}>{organizationsComps}</Accordion>;
+      return (
+        <div className="dashboard-wrapper">
+          <Accordion accordion={false}>{organizationsComps}</Accordion>
+        </div>
+      );
     }
   }
 }

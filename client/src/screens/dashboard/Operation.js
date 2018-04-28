@@ -39,16 +39,12 @@ class Operation extends React.Component {
               All devices: {this.state.devices.length}
             </p>
             <p className="operation-status">
-              Corrupted devices: {this.state.operation.outagesCount}
+              Outages: {this.state.operation.outagesCount}
             </p>
             <p className="operation-status">
-              Suspicious devices: {this.state.operation.suspiciousCount}
+              Suspicious: {this.state.operation.suspiciousCount}
             </p>
-            {operation.modules && (
-              <div className="operations-modules">
-                <p>Corrupted modules: {operation.modules.join(", ")}</p>
-              </div>
-            )}
+            <p className="operations-modules">{operation.modules.length > 0 && "Corrupted modules: " + operation.modules.join(", ")}</p>
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>

@@ -43,6 +43,7 @@
 
 .accordion__body {
   padding-left: 20px;
+  padding-right: 20px;
   display: block;
   animation: fadein 0.35s ease-in;
 }
@@ -168,8 +169,14 @@
 
 /* custom */
 
+.dashboard-wrapper {
+  width: 90%;
+  margin: auto;
+}
+
 .accordion-title {
   background-color: #51ff00;
+  border-radius: 7px;
   color: #000;
   cursor: pointer;
   padding: 18px;
@@ -177,19 +184,32 @@
   text-align: left;
   border: none;
   margin: 1%;
+  transition-duration: 0.3s;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border: 1px solid rgb(148, 146, 146);
+  
+}
+
+.accordion-title:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
 }
 
 .without-outages {
-  background-color: #51ff00;
+  /*background-color: #51ff00;*/
+  background: linear-gradient(-90deg, #51ff0054, #51ff00);
+  
 }
 
 .without-outages:hover {
   background-color: #4be205;
+
 }
 
 
 .with-outages {
-  background-color: #ff0000;
+  /*background-color: #ff0000;*/
+  background: linear-gradient(-90deg, #ff00005d, #ff0000);
 }
 
 .with-outages:hover {
@@ -198,6 +218,8 @@
 
 .with-suspicious {
   background-color: #ffd900;
+  background: linear-gradient(-90deg, #ffd90054, #ffd900);
+
 }
 
 .with-suspicious:hover {
@@ -210,12 +232,17 @@
 }
 
 .organization-name {
-  width: 20%;
+  margin-left: 0%;
+  margin-top: auto;
+  margin-bottom: auto;
+  min-width: 17%;
 }
 
 .organization-operations-status {
   text-align: center;
-  min-width: 10%;
+  min-width: 14%;
+  margin: auto;
+
 }
 
 .operation-title {
@@ -224,28 +251,41 @@
 }
 
 .operation-name {
-  width: 20%;
+  margin-left: 0%;
+  margin-top: auto;
+  margin-bottom: auto;
+  min-width: 20%;
 }
 
 .operation-status {
   text-align: center;
-  min-width: 13%;
+  width: 14%;
+  margin: auto;
 }
 
 .operations-modules {
   display: flex;
+  text-align: center;
+  margin: auto;
+  width: 30%;
 }
 
 .device-title {
   display: flex;
   padding-left: 5%;
+  margin: auto;
+  
 }
 
 .device-name {
-  width: 20%;
+  margin-left: 1%;
+  margin-top: auto;
+  margin-bottom: auto;
+  min-width: 25%;
 }
 
 .device-status {
   text-align: center;
-  min-width: 13%;
+  width: 25%;
+  margin: auto;
 }

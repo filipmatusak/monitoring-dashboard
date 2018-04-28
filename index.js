@@ -153,7 +153,7 @@ const getOutages = operation_id => {
 
 const prepareData = async user => {
   const operations = await Promise.all(
-    user.operation_ids/*.slice(1, 20)*/.map(async operation_id => {
+    user.operation_ids/*.slice(1, 30)*/.map(async operation_id => {
       const operation = await getOperation(operation_id);
       const outages = await getOutages(operation_id);
       const allocations = await getAllocationsForOperation(operation_id);
@@ -163,7 +163,9 @@ const prepareData = async user => {
         })
       )).filter(d => d.active === true)
       .map(d => {
-        d.outage = outages.find(o => o.device_id === d._id);
+        d.outages = outages.filter(o => o.device_id === d._id);
+        d.isSuspicious = outages.some(o => o.severity === "suspicious");
+        d.isOutage = outages.some(o => o.severity === "outage");
         return d
       })
 
@@ -184,8 +186,9 @@ const prepareData = async user => {
     .map(async group => {
       const organization = await getOrganization(group[0].operation.organization_id);
       organization.operationsCount = group.length;
+      organization.okOperations = group.filter(op => op.operation.outagesCount === 0 && op.operation.suspiciousCount === 0).length;
       organization.operationsWithOutages = group.filter(op => op.operation.outagesCount > 0).length;
-      organization.operationsWithSuspicious = group.filter(op => op.operation.suspiciousCount > 0 && op.operation.outagesCount === 0).length;
+      organization.operationsWithSuspicious = group.filter(op => op.operation.suspiciousCount > 0).length;
       return { organization: organization, operations: group };
     }));
 

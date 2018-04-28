@@ -32,11 +32,11 @@ class Device extends React.Component {
           <div className="device-title">
             <p className="device-name">{this.state.device.name}</p>
             <p className="device-status">UUID: {device.uuid}</p>
-            <p className="device-status">Status: {device.monitoring.status}</p>
             <p className="device-status">Type: {device.type}</p>
-            {device.outage && (
-              <p className="device-status">Outage: {device.outage.description}</p>
-            )}
+            <p className="device-status">Status: {device.monitoring.status}</p>
+            <p className="device-status">
+              {device.outage && "Outage: " + device.outage.description}
+            </p>
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>
