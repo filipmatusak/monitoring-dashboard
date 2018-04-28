@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-toolbox/lib/button/Button";
 
 import {
   Accordion,
@@ -17,40 +16,39 @@ class Operation extends React.Component {
     this.state = {
       operation: props.operation,
       devices: props.devices,
-      deviceComps: props.devices.map(d => (
-        <Device device={d} key={d._id} />
-      ))
+      deviceComps: props.devices.map(d => <Device device={d} key={"device_" + d._id} />)
     };
   }
 
   selectColor = () => {
-    const {operation} = this.state;
-    if(operation.outagesCount > 0) return 'with-outages';
-    else if(operation.suspiciousCount > 0) return 'with-suspicious';
-    else return 'without-outages';
-  }
+    const { operation } = this.state;
+    if (operation.outagesCount > 0) return "with-outages";
+    else if (operation.suspiciousCount > 0) return "with-suspicious";
+    else return "without-outages";
+  };
 
   render() {
     const { deviceComps, operation } = this.state;
     return (
       <AccordionItem>
-        <AccordionItemTitle className={this.selectColor()}>
+        <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
           <div className="operation-title">
-            <div className="operation-name">
-              <p>{operation.name}</p>
-            </div>
-            <div className="operations-modules">
-              {operation.modules.map(m => <p key={m}>{m}</p>)}
-            </div>
-            <div className="operations-devices">
-              <p>{this.state.devices.length}</p>
-            </div>
-            <div className="operations-outages">
-              <p>{this.state.operation.outagesCount}</p>
-            </div>
-            <div className="operations-suspicious">
-              <p>{this.state.operation.suspiciousCount}</p>
-            </div>
+            <p className="operation-name">{operation.name}</p>
+
+            <p className="operation-status">
+              All devices: {this.state.devices.length}
+            </p>
+            <p className="operation-status">
+              Corrupted devices: {this.state.operation.outagesCount}
+            </p>
+            <p className="operation-status">
+              Suspicious devices: {this.state.operation.suspiciousCount}
+            </p>
+            {operation.modules && (
+              <div className="operations-modules">
+                <p>Corrupted modules: {operation.modules.join(", ")}</p>
+              </div>
+            )}
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>

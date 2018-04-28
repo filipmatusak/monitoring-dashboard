@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-  Accordion,
   AccordionItem,
   AccordionItemTitle,
   AccordionItemBody
@@ -17,24 +16,27 @@ class Device extends React.Component {
   }
 
   selectColor = () => {
-    const {device} = this.state;
-    if(device.outage && device.outage.severity === 'outage') return 'with-outages';
-    else if(device.outage && device.outage.severity === 'suspicious') return 'with-suspicious';
-    else return 'without-outages';
-  }
+    const { device } = this.state;
+    if (device.outage && device.outage.severity === "outage")
+      return "with-outages";
+    else if (device.outage && device.outage.severity === "suspicious")
+      return "with-suspicious";
+    else return "without-outages";
+  };
 
   render() {
     const { device } = this.state;
     return (
       <AccordionItem disabled={false}>
-        <AccordionItemTitle className={this.selectColor()}>
-          <div className="device-title-wrapper">
-            <p>{this.state.device.name}</p>
-          </div>
-          <div>
-            <p>{device.uuid}</p>
-            <p>{device.monitoring.status}</p>
-            <p>{device.type}</p>
+        <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
+          <div className="device-title">
+            <p className="device-name">{this.state.device.name}</p>
+            <p className="device-status">UUID: {device.uuid}</p>
+            <p className="device-status">Status: {device.monitoring.status}</p>
+            <p className="device-status">Type: {device.type}</p>
+            {device.outage && (
+              <p className="device-status">Outage: {device.outage.description}</p>
+            )}
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>

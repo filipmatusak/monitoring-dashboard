@@ -12,12 +12,13 @@
 }
 
 .accordion {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+  /*border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;*/
+  margin-left: 10px;
 }
 
 .accordion__item + .accordion__item {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  /*border-top: 1px solid rgba(0, 0, 0, 0.1);*/
 }
 
 .accordion__item--has-icon {
@@ -41,7 +42,7 @@
 }
 
 .accordion__body {
-  padding: 20px;
+  padding-left: 20px;
   display: block;
   animation: fadein 0.35s ease-in;
 }
@@ -167,45 +168,84 @@
 
 /* custom */
 
-.without-outages {
-  background-color: #67fd229c;
+.accordion-title {
+  background-color: #51ff00;
   color: #000;
   cursor: pointer;
   padding: 18px;
-  width: 100%;
+ /* width: 100%;*/
   text-align: left;
   border: none;
+  margin: 1%;
+}
+
+.without-outages {
+  background-color: #51ff00;
 }
 
 .without-outages:hover {
-  background-color: #67fd22;
+  background-color: #4be205;
 }
 
 
 .with-outages {
-  background-color: #fc000096;
-  color: #000;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
+  background-color: #ff0000;
 }
 
 .with-outages:hover {
-  background-color: #fc0000dc;
+  background-color: #e00000;
 }
 
 .with-suspicious {
-  background-color: #ff9900cc;
-  color: #000;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
+  background-color: #ffd900;
 }
 
 .with-suspicious:hover {
-  background-color: #ff9900;
+  background-color: #ffc400;
+}
+
+.organization-title {
+  display: flex;
+  padding-left: 5%;
+}
+
+.organization-name {
+  width: 20%;
+}
+
+.organization-operations-status {
+  text-align: center;
+  min-width: 10%;
+}
+
+.operation-title {
+  display: flex;
+  padding-left: 5%;
+}
+
+.operation-name {
+  width: 20%;
+}
+
+.operation-status {
+  text-align: center;
+  min-width: 13%;
+}
+
+.operations-modules {
+  display: flex;
+}
+
+.device-title {
+  display: flex;
+  padding-left: 5%;
+}
+
+.device-name {
+  width: 20%;
+}
+
+.device-status {
+  text-align: center;
+  min-width: 13%;
 }

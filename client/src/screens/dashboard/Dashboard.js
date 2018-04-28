@@ -6,7 +6,6 @@ import { Accordion } from "react-accessible-accordion";
 
 import Organization from "./Organization";
 
-//import "react-accessible-accordion/dist/minimal-example.css";
 import "./style.css";
 
 class Dashboard extends Component {
@@ -50,7 +49,7 @@ class Dashboard extends Component {
         data: data.data,
         organizationsComps: data.data.map(group => {
           
-          return <Organization group={group} key={group.organization._id}/>;
+          return <Organization group={group} key={"org_" + group.organization._id}/>;
         })
       });
     }

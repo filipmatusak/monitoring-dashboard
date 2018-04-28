@@ -17,34 +17,46 @@ class Organization extends React.Component {
       organization: props.group.organization,
       operations: props.group.operations,
       operationComps: props.group.operations.map(op => (
-        <Operation operation={op.operation} devices={op.devices} key={op.operation._id}/>
+        <Operation
+          operation={op.operation}
+          devices={op.devices}
+          key={"org_" + op.operation._id}
+        />
       ))
     };
   }
 
   selectColor = () => {
-    const {organization} = this.state;
-    if(organization.operationsWithOutages > 0) return 'with-outages';
-    else if(organization.operationsWithSuspicious > 0) return 'with-suspicious';
-    else return 'without-outages';
-  }
+    const { organization } = this.state;
+    if (organization.operationsWithOutages > 0) return "with-outages";
+    else if (organization.operationsWithSuspicious > 0)
+      return "with-suspicious";
+    else return "without-outages";
+  };
 
   render() {
     const { operationComps, organization } = this.state;
     return (
       <AccordionItem>
-        <AccordionItemTitle className={this.selectColor()}>
+        <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
           <div className="organization-title">
-            <div className="organization-name">
-              <p>{organization.name}</p>
+            <p className="organization-name">{organization.name}</p>
+            <div className="organization-operations-status">
+              Operations: {organization.operationsCount}
             </div>
             <div className="organization-operations-status">
-              <p>{organization.operationsCount - organization.operationsWithOutages}/{organization.operationsCount}</p>
+              OK: {organization.operationsCount - organization.operationsWithOutages - organization.operationsWithSuspicious}
+            </div>
+            <div className="organization-operations-status">
+              With outages: {organization.operationsWithOutages}
+            </div>
+            <div className="organization-operations-status">
+              With suspicious: {organization.operationsWithSuspicious}
             </div>
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>
-          <Accordion accordion={false} >{operationComps}</Accordion>
+          <Accordion accordion={false}>{operationComps}</Accordion>
         </AccordionItemBody>
       </AccordionItem>
     );

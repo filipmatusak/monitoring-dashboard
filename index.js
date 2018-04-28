@@ -152,7 +152,7 @@ const getOutages = operation_id => {
 
 const prepareData = async user => {
   const operations = await Promise.all(
-    user.operation_ids.slice(1, 50).map(async operation_id => {
+    user.operation_ids/*.slice(1, 20)*/.map(async operation_id => {
       const operation = await getOperation(operation_id);
       const outages = await getOutages(operation_id);
       const allocations = await getAllocationsForOperation(operation_id);
@@ -162,7 +162,7 @@ const prepareData = async user => {
         })
       )).filter(d => d.active === true)
       .map(d => {
-        if(d.monitoring.current_outage) d.outage = outages.find(o => o.device_id === d._id);
+        d.outage = outages.find(o => o.device_id === d._id);
         return d
       })
 
@@ -184,7 +184,7 @@ const prepareData = async user => {
       const organization = await getOrganization(group[0].operation.organization_id);
       organization.operationsCount = group.length;
       organization.operationsWithOutages = group.filter(op => op.operation.outagesCount > 0).length;
-      organization.operationsWithSuspicious = group.filter(op => op.operation.suspiciousCount > 0).length;
+      organization.operationsWithSuspicious = group.filter(op => op.operation.suspiciousCount > 0 && op.operation.outagesCount === 0).length;
       return { organization: organization, operations: group };
     }));
 
@@ -229,6 +229,7 @@ app.get("/data", async (req, res) => {
       let data = await prepareData(user);
       //  console.log("user = " + JSON.stringify(user));
       console.log("token = " + JSON.stringify(token));
+      console.log("data = " + JSON.stringify(data));
       res.send(data);
     }
   }
