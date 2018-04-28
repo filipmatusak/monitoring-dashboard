@@ -86,7 +86,8 @@ const getAllocationsForOperation = operation_id => {
         url: directoryUrl + "/allocations?operation_id=" + operation_id
       },
       function(err, response, body) {
-        resolve(JSON.parse(body));
+        // take only active allocations
+        resolve(JSON.parse(body).filter(b => !b.end_datetime));
       }
     );
   });
@@ -229,7 +230,7 @@ app.get("/data", async (req, res) => {
       let data = await prepareData(user);
       //  console.log("user = " + JSON.stringify(user));
       console.log("token = " + JSON.stringify(token));
-      console.log("data = " + JSON.stringify(data));
+      //console.log("data = " + JSON.stringify(data));
       res.send(data);
     }
   }
