@@ -164,8 +164,8 @@ const prepareData = async user => {
       )).filter(d => d.active === true)
       .map(d => {
         d.outages = outages.filter(o => o.device_id === d._id);
-        d.isSuspicious = outages.some(o => o.severity === "suspicious");
-        d.isOutage = outages.some(o => o.severity === "outage");
+        d.isSuspicious = d.outages.some(o => o.severity === "suspicious");
+        d.isOutage = d.outages.some(o => o.severity === "outage");
         return d
       })
 

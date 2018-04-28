@@ -17,9 +17,9 @@ class Device extends React.Component {
 
   selectColor = () => {
     const { device } = this.state;
-    if (device.outage && device.outage.severity === "outage")
+    if (device.isOutage === true)
       return "with-outages";
-    else if (device.outage && device.outage.severity === "suspicious")
+    else if (device.isSuspicious === true)
       return "with-suspicious";
     else return "without-outages";
   };
