@@ -152,16 +152,23 @@ const getOutages = operation_id => {
 
 const prepareData = async user => {
   const operations = await Promise.all(
-    user.operation_ids.slice(1, 20).map(async operation_id => {
+    user.operation_ids.slice(1, 50).map(async operation_id => {
       const operation = await getOperation(operation_id);
       const outages = await getOutages(operation_id);
       const allocations = await getAllocationsForOperation(operation_id);
-      const devices = await Promise.all(
+      const devices = (await Promise.all(
         allocations.map(allocation => {
           return getDevice(allocation.device_id);
         })
-      );
+      )).filter(d => d.active === true)
+      .map(d => {
+        if(d.monitoring.current_outage) d.outage = outages.find(o => o.device_id === d._id);
+        return d
+      })
+
       operation.outages = outages;
+      operation.outagesCount = outages.filter(o => o.severity === "outage").length;
+      operation.suspiciousCount = outages.filter(o => o.severity === "suspicious").length;
       operation.modules = Array.from(new Set(outages.flatMap(o => o.modules)));
       return {
         operation: operation,
@@ -176,7 +183,8 @@ const prepareData = async user => {
     .map(async group => {
       const organization = await getOrganization(group[0].operation.organization_id);
       organization.operationsCount = group.length;
-      organization.operationsWithoutOutages = group.filter(op => op.operation.outages.length == 0).length;
+      organization.operationsWithOutages = group.filter(op => op.operation.outagesCount > 0).length;
+      organization.operationsWithSuspicious = group.filter(op => op.operation.suspiciousCount > 0).length;
       return { organization: organization, operations: group };
     }));
 
@@ -209,10 +217,11 @@ app.get("/data", async (req, res) => {
       } else {
         console.log("refresh token = " + refreshToken);
         let freshToken = await refreshAccessToken(refreshToken);
+        console.log("fresh token = " + freshToken);
         saveRefreshToken(freshToken);
-        user = await getUserFromAuth(freshToken);
+        user = await getUserFromAuth(freshToken.access_token);
         let data = await prepareData(user);
-        //  console.log("user = " + JSON.stringify(user));
+          console.log("user = " + JSON.stringify(user));
         //console.log("token = " + JSON.stringify(freshToken));
         res.send(data);
       }

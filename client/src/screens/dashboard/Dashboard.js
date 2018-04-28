@@ -6,7 +6,7 @@ import { Accordion } from "react-accessible-accordion";
 
 import Organization from "./Organization";
 
-import "react-accessible-accordion/dist/fancy-example.css";
+//import "react-accessible-accordion/dist/minimal-example.css";
 import "./style.css";
 
 class Dashboard extends Component {
@@ -41,7 +41,7 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     const data = await this.fetchData();
-
+  
     if (data.error) {
       this.props.history.push("/login");
       return;
@@ -49,7 +49,8 @@ class Dashboard extends Component {
       this.setState({
         data: data.data,
         organizationsComps: data.data.map(group => {
-          return <Organization group={group} />;
+          
+          return <Organization group={group} key={group.organization._id}/>;
         })
       });
     }
