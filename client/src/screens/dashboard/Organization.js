@@ -12,17 +12,11 @@ import Operation from "./Operation";
 class Organization extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log(props);
+    console.log(props.selection);
     this.state = {
       organization: props.group.organization,
-      operations: props.group.operations,
-      operationComps: props.group.operations.map(op => (
-        <Operation
-          operation={op.operation}
-          devices={op.devices}
-          key={"org_" + op.operation._id}
-        />
-      ))
+      operations: props.group.operations
     };
   }
 

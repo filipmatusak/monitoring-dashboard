@@ -37,10 +37,13 @@ class Dashboard extends Component {
 
   state = {
     data: [],
-    selectAll: true,
-    selectOK: true,
-    selectOutages: true,
-    selectSuspicious: true
+    selection: {
+      selectAll: true,
+      selectOK: true,
+      selectOutages: true,
+      selectSuspicious: true,
+      selectedCount: 3
+    }
   };
 
   async componentDidMount() {
@@ -51,10 +54,82 @@ class Dashboard extends Component {
       return;
     } else {
       this.setState({
-        data: data.data
+        originData: data.data,
+        data: this.setVisibilityForTree(data.data, this.state.selection)
       });
     }
   }
+
+  setVisibilityForTree = (data, selection) => {
+    const {
+      selectAll: all,
+      selectOK: ok,
+      selectOutages: out,
+      selectSuspicious: sus
+    } = selection;
+    console.log("selection");
+    console.log(selection);
+    if (all) return data;
+    else
+      return data
+        .map(org => {
+          org.operations = org.operations.map(op => {
+            op.devices = op.devices.filter(
+              d =>
+                (ok && !d.isOutage && !d.isSuspicious) ||
+                (out && d.isOutage) ||
+                (sus && d.isSuspicious)
+            );
+
+            op.operation.outagesCount = op.operation.outages.filter(
+              o =>
+                op.devices.find(d => o.device_id === d._id) &&
+                o.severity === "outage"
+            ).length;
+
+            op.operation.suspiciousCount = op.operation.outages.filter(
+              o =>
+                op.devices.find(d => o.device_id === d._id) &&
+                o.severity === "suspicious"
+            ).length;
+
+            return op;
+          });
+
+          org.operations = org.operations.filter(
+            op =>
+              op.devices.length > 0 &&
+              ((ok &&
+                op.operation.suspiciousCount === 0 &&
+                op.operation.outagesCount === 0) ||
+                (out && op.operation.outagesCount > 0) ||
+                (sus && op.operation.suspiciousCount > 0))
+          );
+
+          org.organization.operationsCount = org.operations.length;
+          org.organization.okOperations = org.operations.filter(
+            op =>
+              op.operation.outagesCount === 0 &&
+              op.operation.suspiciousCount === 0
+          ).length;
+          org.organization.operationsWithOutages = org.operations.filter(
+            op => op.operation.outagesCount > 0
+          ).length;
+          org.organization.operationsWithSuspicious = org.operations.filter(
+            op => op.operation.suspiciousCount > 0
+          ).length;
+
+          return org;
+        })
+        .filter(
+          org =>
+            org.operations.length > 0 &&
+            ((ok && org.organization.okOperations > 0) ||
+              (out &&
+                org.organization.operationsWithOutages > 0 &&
+                (sus && org.organization.operationsWithSuspicious > 0)))
+        );
+  };
 
   logOut = credentials => {
     const token = jwt.getToken();
@@ -78,36 +153,69 @@ class Dashboard extends Component {
   };
 
   handleChange = field => {
-    if (field === "selectAll") {
-      if (this.state.selectAll === false)
-        this.setState({
-          selectAll: true,
-          selectOK: true,
-          selectOutages: true,
-          selectSuspicious: true
-        });
-      else {
-        this.setState({
-          selectAll: false,
-          selectOK: false,
-          selectOutages: false,
-          selectSuspicious: false
-        });
-      }
-    } else {
-      this.setState({ [field]: !this.state[field] });
-    }
-  };
-
-  render() {
-    console.log(this.state);
-    const {
-      data,
+    let {
       selectAll,
       selectOK,
       selectOutages,
-      selectSuspicious
-    } = this.state;
+      selectSuspicious,
+      selectedCount
+    } = this.state.selection;
+
+    if (field === "selectAll") {
+      if (selectAll === false) {
+        selectAll = true;
+        selectOK = true;
+        selectOutages = true;
+        selectSuspicious = true;
+        selectedCount = 3;
+      } else {
+        selectAll = false;
+        selectOK = false;
+        selectOutages = false;
+        selectSuspicious = false;
+        selectedCount = 0;
+      }
+    } else {
+      if (selectedCount === 3 && this.state.selection[field]) {
+        selectAll = false;
+        selectedCount = 2;
+      } else if (selectedCount === 2 && !this.state.selection[field]) {
+        selectAll = true;
+        selectedCount = 3;
+      } else {
+        if (this.state.selection[field]) selectedCount--;
+        else selectedCount++;
+      }
+      if (field === "selectOK") selectOK = !selectOK;
+      if (field === "selectOutages") selectOutages = !selectOutages;
+      if (field === "selectSuspicious") selectSuspicious = !selectSuspicious;
+    }
+
+    this.setState({
+      selection: {
+        selectAll,
+        selectedCount,
+        selectOK,
+        selectOutages,
+        selectSuspicious
+      },
+      data: this.setVisibilityForTree(
+        JSON.parse(JSON.stringify(this.state.originData)),
+        {
+          selectAll,
+          selectOK,
+          selectOutages,
+          selectSuspicious
+        }
+      )
+    });
+  };
+
+  render() {
+    console.log("render");
+    console.log(this.state);
+    const { data, selection } = this.state;
+    const { selectAll, selectOK, selectOutages, selectSuspicious } = selection;
     if (this.state.loading) {
       return <ProgressBar type="circular" mode="indeterminate" />;
     } else {
@@ -155,6 +263,7 @@ class Dashboard extends Component {
                   <Organization
                     group={group}
                     key={"org_" + group.organization._id}
+                    selection={selection}
                   />
                 );
               })}

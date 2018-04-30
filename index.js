@@ -44,6 +44,8 @@ const getUserFromAuth = access_token => {
 };
 
 const refreshAccessToken = refresh_token => {
+  console.log("refresh_token in f");
+  console.log(refresh_token);
   return new Promise((resolve, reject) => {
     request.post(
       {
@@ -55,8 +57,7 @@ const refreshAccessToken = refresh_token => {
           grant_type: "refresh_token",
           refresh_token: refresh_token
         }
-      }
-      ,
+      },
       function(err, response, body) {
         console.log(err);
         console.log(body);
