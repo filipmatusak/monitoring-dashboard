@@ -57,6 +57,8 @@ const refreshAccessToken = refresh_token => {
         refresh_token: refresh_token
       },
       function(err, response, body) {
+        console.log(err);
+        console.log(body);
         resolve(JSON.parse(body));
       }
     );
@@ -137,12 +139,19 @@ const getOrganization = organization_id => {
 
 const getOutages = operation_id => {
   const d = new Date();
-  const time = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+  const time = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   return new Promise((resolve, reject) => {
     request.get(
       {
         headers: { "content-type": "application/json" },
-        url: directoryUrl + "/outages?operation_id=" + operation_id + "&start=" + time + "&end=" + time
+        url:
+          directoryUrl +
+          "/outages?operation_id=" +
+          operation_id +
+          "&start=" +
+          time +
+          "&end=" +
+          time
       },
       function(err, response, body) {
         resolve(JSON.parse(body));
@@ -161,17 +170,22 @@ const prepareData = async user => {
         allocations.map(allocation => {
           return getDevice(allocation.device_id);
         })
-      )).filter(d => d.active === true)
-      .map(d => {
-        d.outages = outages.filter(o => o.device_id === d._id);
-        d.isSuspicious = d.outages.some(o => o.severity === "suspicious");
-        d.isOutage = d.outages.some(o => o.severity === "outage");
-        return d
-      })
+      ))
+        .filter(d => d.active === true)
+        .map(d => {
+          d.outages = outages.filter(o => o.device_id === d._id);
+          d.isSuspicious = d.outages.some(o => o.severity === "suspicious");
+          d.isOutage = d.outages.some(o => o.severity === "outage");
+          return d;
+        });
 
       operation.outages = outages;
-      operation.outagesCount = outages.filter(o => o.severity === "outage").length;
-      operation.suspiciousCount = outages.filter(o => o.severity === "suspicious").length;
+      operation.outagesCount = outages.filter(
+        o => o.severity === "outage"
+      ).length;
+      operation.suspiciousCount = outages.filter(
+        o => o.severity === "suspicious"
+      ).length;
       operation.modules = Array.from(new Set(outages.flatMap(o => o.modules)));
       return {
         operation: operation,
@@ -182,17 +196,27 @@ const prepareData = async user => {
 
   let grouped = groupArray(operations, "operation.organization_id");
 
-  let data = await Promise.all(Object.values(grouped)
-    .map(async group => {
-      const organization = await getOrganization(group[0].operation.organization_id);
+  let data = await Promise.all(
+    Object.values(grouped).map(async group => {
+      const organization = await getOrganization(
+        group[0].operation.organization_id
+      );
       organization.operationsCount = group.length;
-      organization.okOperations = group.filter(op => op.operation.outagesCount === 0 && op.operation.suspiciousCount === 0).length;
-      organization.operationsWithOutages = group.filter(op => op.operation.outagesCount > 0).length;
-      organization.operationsWithSuspicious = group.filter(op => op.operation.suspiciousCount > 0).length;
+      organization.okOperations = group.filter(
+        op =>
+          op.operation.outagesCount === 0 && op.operation.suspiciousCount === 0
+      ).length;
+      organization.operationsWithOutages = group.filter(
+        op => op.operation.outagesCount > 0
+      ).length;
+      organization.operationsWithSuspicious = group.filter(
+        op => op.operation.suspiciousCount > 0
+      ).length;
       return { organization: organization, operations: group };
-    }));
+    })
+  );
 
-    return data;
+  return data;
 };
 
 const sendNoAccess = res => {
@@ -210,7 +234,7 @@ app.get("/data", async (req, res) => {
   } else {
     const token = authHeader.split(" ")[1];
     let user = await getUserFromAuth(token);
-   //  console.log("user = " + JSON.stringify(user));
+    //  console.log("user = " + JSON.stringify(user));
     if (user.error) {
       // try refresh token
       const refreshToken = getRefreshToken(token);
@@ -225,7 +249,7 @@ app.get("/data", async (req, res) => {
         saveRefreshToken(freshToken);
         user = await getUserFromAuth(freshToken.access_token);
         let data = await prepareData(user);
-          console.log("user = " + JSON.stringify(user));
+        console.log("user = " + JSON.stringify(user));
         //console.log("token = " + JSON.stringify(freshToken));
         res.send(data);
       }
@@ -237,8 +261,7 @@ app.get("/data", async (req, res) => {
       res.send(data);
     }
   }
-}); 
-
+});
 
 app.post("/login", async (req, res) => {
   try {
@@ -256,6 +279,16 @@ app.post("/login", async (req, res) => {
     console.log(err);
     sendNoAccess(res);
   }
+});
+
+app.post("/logout", async (req, res) => {
+  const authHeader = req.get("authorization");
+  if (!authHeader || authHeader.length < 20) sendNoAccess(res);
+  const token = authHeader.split(" ")[1];
+
+  removeRefreshToken(token);
+
+  res.status(200).send();
 });
 
 if (process.env.NODE_ENV === "production") {

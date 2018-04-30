@@ -171,11 +171,12 @@
 
 .dashboard-wrapper {
   width: 90%;
-  margin: auto;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .accordion-title {
-  background-color: #51ff00;
   border-radius: 7px;
   color: #000;
   cursor: pointer;
@@ -197,19 +198,19 @@
 
 .without-outages {
   /*background-color: #51ff00;*/
-  background: linear-gradient(-90deg, #51ff0054, #51ff00);
+  /*background: linear-gradient(-90deg, #51ff0054, #51ff00);*/
   
 }
 
 .without-outages:hover {
-  background-color: #4be205;
+  background-color: #4be205dc;
 
 }
 
 
 .with-outages {
   /*background-color: #ff0000;*/
-  background: linear-gradient(-90deg, #ff00005d, #ff0000);
+  background: linear-gradient(-90deg, #ff00005d, #ff0000de);
 }
 
 .with-outages:hover {
@@ -288,4 +289,34 @@
   text-align: center;
   width: 25%;
   margin: auto;
+}
+
+
+.app-bar {
+  height: 70px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: #3646b3;
+  display: flex;
+  flex-direction: row;
+}
+
+.app-title {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2%;
+  color: beige;
+  font-size: 2rem;
+  font-weight: 700;
+  
+}
+
+.logout-button {
+  color: beige;
+  background-color: #3646b3;
+  font-size: 1.8rem;
+  font-weight: 700;
+  align-self: auto;
+  width: 100px;
+  border: hidden;
+  margin-left: 77%;
 }

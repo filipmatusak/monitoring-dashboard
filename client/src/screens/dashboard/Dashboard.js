@@ -11,6 +11,7 @@ import "./style.css";
 class Dashboard extends Component {
   fetchData = () => {
     const token = jwt.getToken();
+    console.log(token);
     this.setState({
       loading: true
     });
@@ -56,6 +57,27 @@ class Dashboard extends Component {
     }
   }
 
+  logOut = credentials => {
+    const token = jwt.getToken();
+    let dashboard = this;
+    axios
+      .request("POST", {
+        url: "/logout",
+        headers: {
+          authorization: "Bearer " + token,
+          "content-type": "application/json"
+        }
+      })
+      .then(data => {
+        console.log("logout");
+        jwt.invalidate();
+        this.props.history.push("/login");
+      })
+      .catch(function(e, c, d) {
+        return;
+      });
+  };
+
   render() {
     console.log(this.state);
     const { organizationsComps } = this.state;
@@ -63,8 +85,16 @@ class Dashboard extends Component {
       return <ProgressBar type="circular" mode="indeterminate" />;
     } else {
       return (
-        <div className="dashboard-wrapper">
-          <Accordion accordion={false}>{organizationsComps}</Accordion>
+        <div>
+          <div className="app-bar">
+            <p className='app-title'>Monitoring Dashboard</p>
+            <button className="logout-button" onClick={this.logOut}>
+              Logout
+            </button>
+          </div>
+          <div className="dashboard-wrapper">
+            <Accordion accordion={false}>{organizationsComps}</Accordion>
+          </div>
         </div>
       );
     }
