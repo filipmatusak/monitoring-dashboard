@@ -203,7 +203,8 @@
 }
 
 .without-outages:hover {
-  background-color: #4be205dc;
+  /*background-color: #4be205dc;*/
+  background-color: #4be205a4;
 
 }
 
@@ -304,10 +305,10 @@
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 2%;
+  margin-right: 25%;
   color: beige;
   font-size: 2rem;
   font-weight: 700;
-  
 }
 
 .logout-button {
@@ -318,5 +319,19 @@
   align-self: auto;
   width: 100px;
   border: hidden;
-  margin-left: 77%;
+  margin-left: 10%;
+  margin-right: 2%;
+}
+
+
+
+.checkbox-wrapper {
+  margin-top: 1.5%;
+  margin-bottom: auto;
+  margin-left: 5%;
+}
+
+.checkbox-wrapper span {
+  color: beige;
+  font-size: 1.8rem;
 }

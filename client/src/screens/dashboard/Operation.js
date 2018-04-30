@@ -15,8 +15,7 @@ class Operation extends React.Component {
 
     this.state = {
       operation: props.operation,
-      devices: props.devices,
-      deviceComps: props.devices.map(d => <Device device={d} key={"device_" + d._id} />)
+      devices: props.devices
     };
   }
 
@@ -28,7 +27,7 @@ class Operation extends React.Component {
   };
 
   render() {
-    const { deviceComps, operation } = this.state;
+    const { devices, operation } = this.state;
     return (
       <AccordionItem>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
@@ -44,11 +43,16 @@ class Operation extends React.Component {
             <p className="operation-status">
               Suspicious: {this.state.operation.suspiciousCount}
             </p>
-            <p className="operations-modules">{operation.modules.length > 0 && "Corrupted modules: " + operation.modules.join(", ")}</p>
+            <p className="operations-modules">
+              {operation.modules.length > 0 &&
+                "Corrupted modules: " + operation.modules.join(", ")}
+            </p>
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>
-          <Accordion accordion={false}>{deviceComps}</Accordion>
+          <Accordion accordion={false}>
+            {devices.map(d => <Device device={d} key={"device_" + d._id} />)}
+          </Accordion>
         </AccordionItemBody>
       </AccordionItem>
     );

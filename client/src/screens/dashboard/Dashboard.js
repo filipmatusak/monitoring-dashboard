@@ -3,7 +3,7 @@ import axios from "axios";
 import jwt from "../../util/jwt";
 import ProgressBar from "react-toolbox/lib/progress_bar";
 import { Accordion } from "react-accessible-accordion";
-
+import Checkbox from "react-toolbox/lib/checkbox";
 import Organization from "./Organization";
 
 import "./style.css";
@@ -36,7 +36,11 @@ class Dashboard extends Component {
   };
 
   state = {
-    data: []
+    data: [],
+    selectAll: true,
+    selectOK: true,
+    selectOutages: true,
+    selectSuspicious: true
   };
 
   async componentDidMount() {
@@ -47,12 +51,7 @@ class Dashboard extends Component {
       return;
     } else {
       this.setState({
-        data: data.data,
-        organizationsComps: data.data.map(group => {
-          return (
-            <Organization group={group} key={"org_" + group.organization._id} />
-          );
-        })
+        data: data.data
       });
     }
   }
@@ -78,22 +77,88 @@ class Dashboard extends Component {
       });
   };
 
+  handleChange = field => {
+    if (field === "selectAll") {
+      if (this.state.selectAll === false)
+        this.setState({
+          selectAll: true,
+          selectOK: true,
+          selectOutages: true,
+          selectSuspicious: true
+        });
+      else {
+        this.setState({
+          selectAll: false,
+          selectOK: false,
+          selectOutages: false,
+          selectSuspicious: false
+        });
+      }
+    } else {
+      this.setState({ [field]: !this.state[field] });
+    }
+  };
+
   render() {
     console.log(this.state);
-    const { organizationsComps } = this.state;
+    const {
+      data,
+      selectAll,
+      selectOK,
+      selectOutages,
+      selectSuspicious
+    } = this.state;
     if (this.state.loading) {
       return <ProgressBar type="circular" mode="indeterminate" />;
     } else {
       return (
         <div>
           <div className="app-bar">
-            <p className='app-title'>Monitoring Dashboard</p>
+            <p className="app-title">Monitoring Dashboard</p>
+
+            <div className="checkbox-wrapper">
+              <Checkbox
+                checked={selectAll}
+                label="All"
+                onChange={this.handleChange.bind(this, "selectAll")}
+              />
+            </div>
+            <div className="checkbox-wrapper">
+              <Checkbox
+                checked={selectOK}
+                label="OK"
+                onChange={this.handleChange.bind(this, "selectOK")}
+              />
+            </div>
+            <div className="checkbox-wrapper">
+              <Checkbox
+                checked={selectOutages}
+                label="Outages"
+                onChange={this.handleChange.bind(this, "selectOutages")}
+              />
+            </div>
+            <div className="checkbox-wrapper">
+              <Checkbox
+                checked={selectSuspicious}
+                label="Suspicious"
+                onChange={this.handleChange.bind(this, "selectSuspicious")}
+              />
+            </div>
             <button className="logout-button" onClick={this.logOut}>
               Logout
             </button>
           </div>
           <div className="dashboard-wrapper">
-            <Accordion accordion={false}>{organizationsComps}</Accordion>
+            <Accordion accordion={false}>
+              {data.map(group => {
+                return (
+                  <Organization
+                    group={group}
+                    key={"org_" + group.organization._id}
+                  />
+                );
+              })}
+            </Accordion>
           </div>
         </div>
       );

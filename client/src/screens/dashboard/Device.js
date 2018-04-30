@@ -35,7 +35,7 @@ class Device extends React.Component {
             <p className="device-status">Type: {device.type}</p>
             <p className="device-status">Status: {device.monitoring.status}</p>
             <p className="device-status">
-              {device.outage && "Outage: " + device.outage.description}
+              {device.outages.length > 0 && "Outage: " + device.outages[0].description}
             </p>
           </div>
         </AccordionItemTitle>

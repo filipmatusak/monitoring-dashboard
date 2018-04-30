@@ -35,7 +35,7 @@ class Organization extends React.Component {
   };
 
   render() {
-    const { operationComps, organization } = this.state;
+    const { operations, organization } = this.state;
     return (
       <AccordionItem>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
@@ -56,7 +56,15 @@ class Organization extends React.Component {
           </div>
         </AccordionItemTitle>
         <AccordionItemBody>
-          <Accordion accordion={false}>{operationComps}</Accordion>
+          <Accordion accordion={false}>
+            {operations.map(op => (
+              <Operation
+                operation={op.operation}
+                devices={op.devices}
+                key={"org_" + op.operation._id}
+              />
+            ))}
+          </Accordion>
         </AccordionItemBody>
       </AccordionItem>
     );

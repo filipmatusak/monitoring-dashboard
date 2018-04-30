@@ -50,12 +50,13 @@ const refreshAccessToken = refresh_token => {
         headers: {
           "content-type": "application/json"
         },
-        url: authApiUrl + "/oauth/token"
-      },
-      {
-        grant_type: "refresh_token",
-        refresh_token: refresh_token
-      },
+        url: authApiUrl + "/oauth/token",
+        body: {
+          grant_type: "refresh_token",
+          refresh_token: refresh_token
+        }
+      }
+      ,
       function(err, response, body) {
         console.log(err);
         console.log(body);
@@ -162,7 +163,7 @@ const getOutages = operation_id => {
 
 const prepareData = async user => {
   const operations = await Promise.all(
-    user.operation_ids/*.slice(1, 30)*/.map(async operation_id => {
+    user.operation_ids.slice(1, 30).map(async operation_id => {
       const operation = await getOperation(operation_id);
       const outages = await getOutages(operation_id);
       const allocations = await getAllocationsForOperation(operation_id);
