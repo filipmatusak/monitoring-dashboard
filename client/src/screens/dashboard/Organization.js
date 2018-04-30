@@ -10,18 +10,9 @@ import {
 import Operation from "./Operation";
 
 class Organization extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-    console.log(props.selection);
-    this.state = {
-      organization: props.group.organization,
-      operations: props.group.operations
-    };
-  }
 
   selectColor = () => {
-    const { organization } = this.state;
+    const { organization } = this.props.group;
     if (organization.operationsWithOutages > 0) return "with-outages";
     else if (organization.operationsWithSuspicious > 0)
       return "with-suspicious";
@@ -29,7 +20,7 @@ class Organization extends React.Component {
   };
 
   render() {
-    const { operations, organization } = this.state;
+    const { operations, organization } = this.props.group;
     return (
       <AccordionItem>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>

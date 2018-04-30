@@ -46,6 +46,7 @@ const getUserFromAuth = access_token => {
 const refreshAccessToken = refresh_token => {
   console.log("refresh_token in f");
   console.log(refresh_token);
+  console.log(authApiUrl + "/oauth/token");
   return new Promise((resolve, reject) => {
     request.post(
       {
@@ -53,10 +54,10 @@ const refreshAccessToken = refresh_token => {
           "content-type": "application/json"
         },
         url: authApiUrl + "/oauth/token",
-        body: {
+        body: JSON.stringify({
           grant_type: "refresh_token",
           refresh_token: refresh_token
-        }
+        })
       },
       function(err, response, body) {
         console.log(err);
@@ -164,7 +165,7 @@ const getOutages = operation_id => {
 
 const prepareData = async user => {
   const operations = await Promise.all(
-    user.operation_ids.slice(1, 30).map(async operation_id => {
+    user.operation_ids.slice(1, 50).map(async operation_id => {
       const operation = await getOperation(operation_id);
       const outages = await getOutages(operation_id);
       const allocations = await getAllocationsForOperation(operation_id);

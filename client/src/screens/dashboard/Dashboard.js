@@ -74,12 +74,18 @@ class Dashboard extends Component {
       return data
         .map(org => {
           org.operations = org.operations.map(op => {
+
+            console.log("old devices");
+            console.log(op.devices)
             op.devices = op.devices.filter(
               d =>
                 (ok && !d.isOutage && !d.isSuspicious) ||
                 (out && d.isOutage) ||
                 (sus && d.isSuspicious)
             );
+
+            console.log("new devices");
+            console.log(op.devices)
 
             op.operation.outagesCount = op.operation.outages.filter(
               o =>
@@ -96,6 +102,9 @@ class Dashboard extends Component {
             return op;
           });
 
+          
+          console.log("old operaions");
+          console.log(org.operations);
           org.operations = org.operations.filter(
             op =>
               op.devices.length > 0 &&
@@ -105,6 +114,9 @@ class Dashboard extends Component {
                 (out && op.operation.outagesCount > 0) ||
                 (sus && op.operation.suspiciousCount > 0))
           );
+
+          console.log("new operaions");
+          console.log(org.operations);
 
           org.organization.operationsCount = org.operations.length;
           org.organization.okOperations = org.operations.filter(
@@ -126,8 +138,8 @@ class Dashboard extends Component {
             org.operations.length > 0 &&
             ((ok && org.organization.okOperations > 0) ||
               (out &&
-                org.organization.operationsWithOutages > 0 &&
-                (sus && org.organization.operationsWithSuspicious > 0)))
+                org.organization.operationsWithOutages > 0) ||
+                (sus && org.organization.operationsWithSuspicious > 0))
         );
   };
 

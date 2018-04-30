@@ -7,16 +7,9 @@ import {
 } from "react-accessible-accordion";
 
 class Device extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      device: props.device
-    };
-  }
 
   selectColor = () => {
-    const { device } = this.state;
+    const { device } = this.props;
     if (device.isOutage === true)
       return "with-outages";
     else if (device.isSuspicious === true)
@@ -25,12 +18,12 @@ class Device extends React.Component {
   };
 
   render() {
-    const { device } = this.state;
+    const { device } = this.props;
     return (
       <AccordionItem disabled={false}>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
           <div className="device-title">
-            <p className="device-name">{this.state.device.name}</p>
+            <p className="device-name">{this.props.device.name}</p>
             <p className="device-status">UUID: {device.uuid}</p>
             <p className="device-status">Type: {device.type}</p>
             <p className="device-status">Status: {device.monitoring.status}</p>

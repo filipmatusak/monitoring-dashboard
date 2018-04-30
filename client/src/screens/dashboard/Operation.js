@@ -10,24 +10,16 @@ import {
 import Device from "./Device";
 
 class Operation extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      operation: props.operation,
-      devices: props.devices
-    };
-  }
 
   selectColor = () => {
-    const { operation } = this.state;
+    const { operation } = this.props;
     if (operation.outagesCount > 0) return "with-outages";
     else if (operation.suspiciousCount > 0) return "with-suspicious";
     else return "without-outages";
   };
 
   render() {
-    const { devices, operation } = this.state;
+    const { devices, operation } = this.props;
     return (
       <AccordionItem>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
@@ -35,17 +27,17 @@ class Operation extends React.Component {
             <p className="operation-name">{operation.name}</p>
 
             <p className="operation-status">
-              All devices: {this.state.devices.length}
+              All devices: {this.props.devices.length}
             </p>
             <p className="operation-status">
-              Outages: {this.state.operation.outagesCount}
+              Outages: {this.props.operation.outagesCount}
             </p>
             <p className="operation-status">
-              Suspicious: {this.state.operation.suspiciousCount}
+              Suspicious: {this.props.operation.suspiciousCount}
             </p>
             <p className="operations-modules">
               {operation.modules.length > 0 &&
-                "Corrupted modules: " + operation.modules.join(", ")}
+                "Corrupted: " + operation.modules.join(", ")}
             </p>
           </div>
         </AccordionItemTitle>

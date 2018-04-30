@@ -170,7 +170,7 @@
 /* custom */
 
 .dashboard-wrapper {
-  width: 90%;
+  width: 80%;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -204,23 +204,24 @@
 
 .without-outages:hover {
   /*background-color: #4be205dc;*/
-  background-color: #4be205a4;
+ /* background-color: #4be2057a;*/
 
 }
 
 
 .with-outages {
   /*background-color: #ff0000;*/
-  background: linear-gradient(-90deg, #ff00005d, #ff0000de);
+  background: linear-gradient(-90deg, #fff 50%, #ff0000de);
 }
 
 .with-outages:hover {
   background-color: #e00000;
+  
 }
 
 .with-suspicious {
   background-color: #ffd900;
-  background: linear-gradient(-90deg, #ffd90054, #ffd900);
+  background: linear-gradient(-90deg,  #fff 50%, #ffd900);
 
 }
 
