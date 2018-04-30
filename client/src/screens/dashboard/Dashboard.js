@@ -102,7 +102,7 @@ class Dashboard extends Component {
             return op;
           });
 
-          
+
           console.log("old operaions");
           console.log(org.operations);
           org.operations = org.operations.filter(
@@ -139,7 +139,7 @@ class Dashboard extends Component {
             ((ok && org.organization.okOperations > 0) ||
               (out &&
                 org.organization.operationsWithOutages > 0) ||
-                (sus && org.organization.operationsWithSuspicious > 0))
+              (sus && org.organization.operationsWithSuspicious > 0))
         );
   };
 
@@ -159,7 +159,7 @@ class Dashboard extends Component {
         jwt.invalidate();
         this.props.history.push("/login");
       })
-      .catch(function(e, c, d) {
+      .catch(function (e, c, d) {
         return;
       });
   };
@@ -268,18 +268,20 @@ class Dashboard extends Component {
               Logout
             </button>
           </div>
-          <div className="dashboard-wrapper">
-            <Accordion accordion={false}>
-              {data.map(group => {
-                return (
-                  <Organization
-                    group={group}
-                    key={"org_" + group.organization._id}
-                    selection={selection}
-                  />
-                );
-              })}
-            </Accordion>
+          <div className='dashboard-content'>
+            <div className="dashboard-wrapper">
+              <Accordion accordion={false}>
+                {data.map(group => {
+                  return (
+                    <Organization
+                      group={group}
+                      key={"org_" + group.organization._id}
+                      selection={selection}
+                    />
+                  );
+                })}
+              </Accordion>
+            </div>
           </div>
         </div>
       );
