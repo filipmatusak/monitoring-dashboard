@@ -198,13 +198,13 @@
 
 .without-outages {
   /*background-color: #51ff00;*/
-  /*background: linear-gradient(-90deg, #51ff0054, #51ff00);*/
+  /*background: linear-gradient(-90deg, #fff 50%, #51ff00);*/
   
 }
 
 .without-outages:hover {
   /*background-color: #4be205dc;*/
- /* background-color: #4be2057a;*/
+  /*background-color: #4be2057a;*/
 
 }
 

@@ -67,16 +67,16 @@ class Dashboard extends Component {
       selectOutages: out,
       selectSuspicious: sus
     } = selection;
-    console.log("selection");
-    console.log(selection);
+    //console.log("selection");
+    //console.log(selection);
     if (all) return data;
     else
       return data
         .map(org => {
           org.operations = org.operations.map(op => {
 
-            console.log("old devices");
-            console.log(op.devices)
+            //console.log("old devices");
+            //console.log(op.devices)
             op.devices = op.devices.filter(
               d =>
                 (ok && !d.isOutage && !d.isSuspicious) ||
@@ -84,10 +84,10 @@ class Dashboard extends Component {
                 (sus && d.isSuspicious)
             );
 
-            console.log("new devices");
-            console.log(op.devices)
+            //console.log("new devices");
+            //console.log(op.devices)
 
-            op.operation.outagesCount = op.operation.outages.filter(
+            /*op.operation.outagesCount = op.operation.outages.filter(
               o =>
                 op.devices.find(d => o.device_id === d._id) &&
                 o.severity === "outage"
@@ -97,7 +97,7 @@ class Dashboard extends Component {
               o =>
                 op.devices.find(d => o.device_id === d._id) &&
                 o.severity === "suspicious"
-            ).length;
+            ).length;*/
 
             return op;
           });
