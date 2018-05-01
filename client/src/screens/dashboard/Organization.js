@@ -13,14 +13,16 @@ class Organization extends React.Component {
 
   selectColor = () => {
     const { organization } = this.props.group;
-    if (organization.operationsWithOutages > 0) return "with-outages";
-    else if (organization.operationsWithSuspicious > 0)
+    const { selectOutages, selectSuspicious } = this.props.selection;
+    if (selectOutages && organization.operationsWithOutages > 0) return "with-outages";
+    else if (selectSuspicious && organization.operationsWithSuspicious > 0)
       return "with-suspicious";
     else return "without-outages";
   };
 
   render() {
     const { operations, organization } = this.props.group;
+    const { selection } = this.props;
     return (
       <AccordionItem>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
@@ -47,6 +49,7 @@ class Organization extends React.Component {
                 operation={op.operation}
                 devices={op.devices}
                 key={"org_" + op.operation._id}
+                selection={selection}
               />
             ))}
           </Accordion>

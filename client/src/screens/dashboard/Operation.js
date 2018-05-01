@@ -13,13 +13,14 @@ class Operation extends React.Component {
 
   selectColor = () => {
     const { operation } = this.props;
-    if (operation.outagesCount > 0) return "with-outages";
-    else if (operation.suspiciousCount > 0) return "with-suspicious";
+    const { selectOutages, selectSuspicious } = this.props.selection;
+    if (selectOutages && operation.outagesCount > 0) return "with-outages";
+    else if (selectSuspicious && operation.suspiciousCount > 0) return "with-suspicious";
     else return "without-outages";
   };
 
   render() {
-    const { devices, operation } = this.props;
+    const { devices, operation, selection } = this.props;
     return (
       <AccordionItem>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
@@ -43,7 +44,7 @@ class Operation extends React.Component {
         </AccordionItemTitle>
         <AccordionItemBody>
           <Accordion accordion={false}>
-            {devices.map(d => <Device device={d} key={"device_" + d._id} />)}
+            {devices.map(d => <Device device={d} key={"device_" + d._id} selection={selection}/>)}
           </Accordion>
         </AccordionItemBody>
       </AccordionItem>

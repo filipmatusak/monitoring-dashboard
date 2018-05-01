@@ -258,7 +258,7 @@ app.get("/data", async (req, res) => {
       }
     } else {
       let data = await prepareData(user);
-      //  console.log("user = " + JSON.stringify(user));
+       console.log("user = " + JSON.stringify(user));
       console.log("token = " + JSON.stringify(token));
       //console.log("data = " + JSON.stringify(data));
       res.send(data);
