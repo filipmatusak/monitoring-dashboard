@@ -1,0 +1,594 @@
+[
+    {
+        "_id": "5630a5544d4c6a0000000100",
+        "operation_id": "54ff1f080d5af21000000015",
+        "device_id": "5630a5544d4c6a0000000400",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000101",
+        "operation_id": "54ff1f080d5af21000000015",
+        "device_id": "5630a5544d4c6a0000000401",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000102",
+        "operation_id": "54ff1f080d5af21000000016",
+        "device_id": "5630a5544d4c6a0000000402",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000103",
+        "operation_id": "54ff1f080d5af21000000016",
+        "device_id": "5630a5544d4c6a0000000403",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000104",
+        "operation_id": "54ff1f080d5af21000000017",
+        "device_id": "5630a5544d4c6a0000000404",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000105",
+        "operation_id": "54ff1f080d5af21000000017",
+        "device_id": "5630a5544d4c6a0000000405",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000106",
+        "operation_id": "54ff1f080d5af21000000018",
+        "device_id": "5630a5544d4c6a0000000406",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000107",
+        "operation_id": "54ff1f080d5af21000000018",
+        "device_id": "5630a5544d4c6a0000000407",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000108",
+        "operation_id": "54ff1f080d5af21000000019",
+        "device_id": "5630a5544d4c6a0000000408",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000109",
+        "operation_id": "54ff1f080d5af21000000019",
+        "device_id": "5630a5544d4c6a0000000409",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000110",
+        "operation_id": "54ff1f080d5af21000000020",
+        "device_id": "5630a5544d4c6a0000000410",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000111",
+        "operation_id": "54ff1f080d5af21000000020",
+        "device_id": "5630a5544d4c6a0000000411",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000112",
+        "operation_id": "54ff1f080d5af21000000021",
+        "device_id": "5630a5544d4c6a0000000412",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000113",
+        "operation_id": "54ff1f080d5af21000000021",
+        "device_id": "5630a5544d4c6a0000000413",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000114",
+        "operation_id": "54ff1f080d5af21000000022",
+        "device_id": "5630a5544d4c6a0000000414",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000115",
+        "operation_id": "54ff1f080d5af21000000022",
+        "device_id": "5630a5544d4c6a0000000415",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000116",
+        "operation_id": "54ff1f080d5af21000000023",
+        "device_id": "5630a5544d4c6a0000000416",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000117",
+        "operation_id": "54ff1f080d5af21000000023",
+        "device_id": "5630a5544d4c6a0000000417",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000118",
+        "operation_id": "54ff1f080d5af21000000024",
+        "device_id": "5630a5544d4c6a0000000418",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000119",
+        "operation_id": "54ff1f080d5af21000000024",
+        "device_id": "5630a5544d4c6a0000000419",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000120",
+        "operation_id": "54ff1f080d5af21000000025",
+        "device_id": "5630a5544d4c6a0000000420",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000121",
+        "operation_id": "54ff1f080d5af21000000025",
+        "device_id": "5630a5544d4c6a0000000421",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000122",
+        "operation_id": "54ff1f080d5af21000000026",
+        "device_id": "5630a5544d4c6a0000000422",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000123",
+        "operation_id": "54ff1f080d5af21000000026",
+        "device_id": "5630a5544d4c6a0000000423",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000124",
+        "operation_id": "54ff1f080d5af21000000027",
+        "device_id": "5630a5544d4c6a0000000424",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000125",
+        "operation_id": "54ff1f080d5af21000000027",
+        "device_id": "5630a5544d4c6a0000000425",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000126",
+        "operation_id": "54ff1f080d5af21000000028",
+        "device_id": "5630a5544d4c6a0000000426",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000127",
+        "operation_id": "54ff1f080d5af21000000028",
+        "device_id": "5630a5544d4c6a0000000427",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000128",
+        "operation_id": "54ff1f080d5af21000000029",
+        "device_id": "5630a5544d4c6a0000000428",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000129",
+        "operation_id": "54ff1f080d5af21000000029",
+        "device_id": "5630a5544d4c6a0000000429",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000130",
+        "operation_id": "54ff1f080d5af21000000030",
+        "device_id": "5630a5544d4c6a0000000430",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000131",
+        "operation_id": "54ff1f080d5af21000000030",
+        "device_id": "5630a5544d4c6a0000000431",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000132",
+        "operation_id": "54ff1f080d5af21000000031",
+        "device_id": "5630a5544d4c6a0000000432",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000133",
+        "operation_id": "54ff1f080d5af21000000031",
+        "device_id": "5630a5544d4c6a0000000433",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000134",
+        "operation_id": "54ff1f080d5af21000000032",
+        "device_id": "5630a5544d4c6a0000000434",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000135",
+        "operation_id": "54ff1f080d5af21000000032",
+        "device_id": "5630a5544d4c6a0000000435",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000136",
+        "operation_id": "54ff1f080d5af21000000033",
+        "device_id": "5630a5544d4c6a0000000436",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000137",
+        "operation_id": "54ff1f080d5af21000000033",
+        "device_id": "5630a5544d4c6a0000000437",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000138",
+        "operation_id": "54ff1f080d5af21000000034",
+        "device_id": "5630a5544d4c6a0000000438",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000139",
+        "operation_id": "54ff1f080d5af21000000034",
+        "device_id": "5630a5544d4c6a0000000439",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000140",
+        "operation_id": "54ff1f080d5af21000000035",
+        "device_id": "5630a5544d4c6a0000000440",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000141",
+        "operation_id": "54ff1f080d5af21000000035",
+        "device_id": "5630a5544d4c6a0000000441",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000142",
+        "operation_id": "54ff1f080d5af21000000036",
+        "device_id": "5630a5544d4c6a0000000442",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000143",
+        "operation_id": "54ff1f080d5af21000000036",
+        "device_id": "5630a5544d4c6a0000000443",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000144",
+        "operation_id": "54ff1f080d5af21000000037",
+        "device_id": "5630a5544d4c6a0000000444",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000145",
+        "operation_id": "54ff1f080d5af21000000037",
+        "device_id": "5630a5544d4c6a0000000445",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000146",
+        "operation_id": "54ff1f080d5af21000000038",
+        "device_id": "5630a5544d4c6a0000000446",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000147",
+        "operation_id": "54ff1f080d5af21000000038",
+        "device_id": "5630a5544d4c6a0000000447",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000148",
+        "operation_id": "54ff1f080d5af21000000039",
+        "device_id": "5630a5544d4c6a0000000448",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000149",
+        "operation_id": "54ff1f080d5af21000000039",
+        "device_id": "5630a5544d4c6a0000000449",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000150",
+        "operation_id": "54ff1f080d5af21000000040",
+        "device_id": "5630a5544d4c6a0000000450",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000151",
+        "operation_id": "54ff1f080d5af21000000040",
+        "device_id": "5630a5544d4c6a0000000451",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000152",
+        "operation_id": "54ff1f080d5af21000000041",
+        "device_id": "5630a5544d4c6a0000000452",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000153",
+        "operation_id": "54ff1f080d5af21000000041",
+        "device_id": "5630a5544d4c6a0000000453",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000154",
+        "operation_id": "54ff1f080d5af21000000042",
+        "device_id": "5630a5544d4c6a0000000454",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000155",
+        "operation_id": "54ff1f080d5af21000000042",
+        "device_id": "5630a5544d4c6a0000000455",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000156",
+        "operation_id": "54ff1f080d5af21000000043",
+        "device_id": "5630a5544d4c6a0000000456",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000157",
+        "operation_id": "54ff1f080d5af21000000043",
+        "device_id": "5630a5544d4c6a0000000457",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000158",
+        "operation_id": "54ff1f080d5af21000000044",
+        "device_id": "5630a5544d4c6a0000000458",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000159",
+        "operation_id": "54ff1f080d5af21000000044",
+        "device_id": "5630a5544d4c6a0000000459",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000160",
+        "operation_id": "54ff1f080d5af21000000045",
+        "device_id": "5630a5544d4c6a0000000460",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000161",
+        "operation_id": "54ff1f080d5af21000000045",
+        "device_id": "5630a5544d4c6a0000000461",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000162",
+        "operation_id": "54ff1f080d5af21000000046",
+        "device_id": "5630a5544d4c6a0000000462",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000163",
+        "operation_id": "54ff1f080d5af21000000046",
+        "device_id": "5630a5544d4c6a0000000463",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000164",
+        "operation_id": "54ff1f080d5af21000000047",
+        "device_id": "5630a5544d4c6a0000000464",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000165",
+        "operation_id": "54ff1f080d5af21000000047",
+        "device_id": "5630a5544d4c6a0000000465",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000166",
+        "operation_id": "54ff1f080d5af21000000048",
+        "device_id": "5630a5544d4c6a0000000466",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000167",
+        "operation_id": "54ff1f080d5af21000000048",
+        "device_id": "5630a5544d4c6a0000000467",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000168",
+        "operation_id": "54ff1f080d5af21000000049",
+        "device_id": "5630a5544d4c6a0000000468",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000169",
+        "operation_id": "54ff1f080d5af21000000049",
+        "device_id": "5630a5544d4c6a0000000469",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000170",
+        "operation_id": "54ff1f080d5af21000000050",
+        "device_id": "5630a5544d4c6a0000000470",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000171",
+        "operation_id": "54ff1f080d5af21000000050",
+        "device_id": "5630a5544d4c6a0000000471",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000172",
+        "operation_id": "54ff1f080d5af21000000051",
+        "device_id": "5630a5544d4c6a0000000472",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    },
+    {
+        "_id": "5630a5544d4c6a0000000173",
+        "operation_id": "54ff1f080d5af21000000051",
+        "device_id": "5630a5544d4c6a0000000473",
+        "__v": 0,
+        "floor_id": "55816ac8c5718be75ab460a3",
+        "start_datetime": "2015-10-28T10:37:08.251Z"
+    }
+]

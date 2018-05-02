@@ -231,6 +231,7 @@ const sendNoAccess = res => {
 
 app.get("/data", async (req, res) => {
   const authHeader = req.get("authorization");
+  console.log("header = " + authHeader);
   if (!authHeader || authHeader.length < 20) {
     console.log("without header");
     sendNoAccess(res);
