@@ -6,6 +6,12 @@ import {
   getRefreshToken
 } from "./server/util/cache";
 import jwt from "./server/util/jwt";
+import organizations from "./demo/organizations.json";
+import operations from "./demo/operations.json";
+import devices from "./demo/devices.json";
+import allocations from "./demo/allocations.json";
+import outages from "./demo/outages.json";
+import users from "./demo/users.json";
 
 const express = require("express");
 const http = require("http");
@@ -24,7 +30,36 @@ const authApiUrl = process.env.AUTH_URL;
 const directoryUrl = process.env.DIRECTORY_URL;
 const oauthPublicKey = process.env.OAUTH_PUBLIC_KEY;
 
-app.use(bodyParser.json());
+/*
+const send = (data, path) => {
+  data.map(obj => {
+    request.post(
+      {
+        headers: {
+          "content-type": "application/json"
+        },
+        url: directoryUrl + path,
+        body: JSON.stringify(obj)
+      },
+      function(err, response, body) {
+        if (err) {
+          console.log(path);
+          console.log(body);
+          console.log(err);
+        }
+      }
+    );
+  });
+};
+
+send(organizations, "/organizations");
+send(operations, "/operations");
+send(devices, "/devices");
+send(allocations, "/allocations");
+send(outages, "/outages");
+send(users, "/users");
+
+app.use(bodyParser.json());*/
 
 const getUserFromAuth = access_token => {
   return new Promise((resolve, reject) => {
@@ -37,7 +72,9 @@ const getUserFromAuth = access_token => {
         url: authApiUrl + "/users/me"
       },
       function(err, response, body) {
-        resolve(JSON.parse(body));
+        let res = JSON.parse(body);
+        res.operation_ids = operations.map(op => op._id);
+        resolve(res);
       }
     );
   });
@@ -259,7 +296,7 @@ app.get("/data", async (req, res) => {
       }
     } else {
       let data = await prepareData(user);
-       console.log("user = " + JSON.stringify(user));
+      console.log("user = " + JSON.stringify(user));
       console.log("token = " + JSON.stringify(token));
       //console.log("data = " + JSON.stringify(data));
       res.send(data);

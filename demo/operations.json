@@ -833,7 +833,7 @@
     },
     {
         "_id": "54ff1f080d5af21000000047",
-        "name": "Phanta Rhei BA",
+        "name": "Panta Rhei BA",
         "organization_id": "54ff1f080d5af21000000011",
         "__v": 3,
         "location": {
@@ -938,7 +938,7 @@
     {
         "_id": "54ff1f080d5af21000000051",
         "name": "Hornhach BA",
-        "organization_id": "54ff1f080d5af21000000013",
+        "organization_id": "54ff1f080d5af21000000014",
         "__v": 3,
         "location": {
             "type": "Point",
