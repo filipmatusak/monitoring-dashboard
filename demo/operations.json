@@ -1,0 +1,964 @@
+[
+    {
+        "_id": "54ff1f080d5af21000000015",
+        "name": "Billa BA",
+        "organization_id": "54ff1f080d5af21000000000",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000016",
+        "name": "Billa KE",
+        "organization_id": "54ff1f080d5af21000000000",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000017",
+        "name": "Billa ZA",
+        "organization_id": "54ff1f080d5af21000000000",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000018",
+        "name": "Billa TN",
+        "organization_id": "54ff1f080d5af21000000000",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000019",
+        "name": "Lidl ZA",
+        "organization_id": "54ff1f080d5af21000000001",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000020",
+        "name": "Lidl TN",
+        "organization_id": "54ff1f080d5af21000000001",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000021",
+        "name": "Lidl TT",
+        "organization_id": "54ff1f080d5af21000000001",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000022",
+        "name": "Lidl PO",
+        "organization_id": "54ff1f080d5af21000000001",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000023",
+        "name": "Lidl BB",
+        "organization_id": "54ff1f080d5af21000000001",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000024",
+        "name": "Lidl NZ",
+        "organization_id": "54ff1f080d5af21000000001",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000025",
+        "name": "COOP PO",
+        "organization_id": "54ff1f080d5af21000000002",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000026",
+        "name": "COOP BY",
+        "organization_id": "54ff1f080d5af21000000002",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000027",
+        "name": "COOP GA",
+        "organization_id": "54ff1f080d5af21000000002",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000028",
+        "name": "Terno ZA",
+        "organization_id": "54ff1f080d5af21000000003",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000029",
+        "name": "Terno TN",
+        "organization_id": "54ff1f080d5af21000000003",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000030",
+        "name": "Terno TT",
+        "organization_id": "54ff1f080d5af21000000003",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000031",
+        "name": "Terno PO",
+        "organization_id": "54ff1f080d5af21000000003",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000032",
+        "name": "Terno BB",
+        "organization_id": "54ff1f080d5af21000000003",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000033",
+        "name": "Terno NZ",
+        "organization_id": "54ff1f080d5af21000000003",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000034",
+        "name": "Kaufland BA 2",
+        "organization_id": "54ff1f080d5af21000000004",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000035",
+        "name": "Kaufland BA 1",
+        "organization_id": "54ff1f080d5af21000000004",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000036",
+        "name": "Tesco BA",
+        "organization_id": "54ff1f080d5af21000000005",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000037",
+        "name": "Tesco TT",
+        "organization_id": "54ff1f080d5af21000000005",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000038",
+        "name": "Metro BB 1",
+        "organization_id": "54ff1f080d5af21000000006",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000039",
+        "name": "Metro KE",
+        "organization_id": "54ff1f080d5af21000000006",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000040",
+        "name": "CBA KE",
+        "organization_id": "54ff1f080d5af21000000007",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000041",
+        "name": "Teta BA",
+        "organization_id": "54ff1f080d5af21000000008",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000042",
+        "name": "Teta BA2",
+        "organization_id": "54ff1f080d5af21000000008",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000043",
+        "name": "DM BA",
+        "organization_id": "54ff1f080d5af21000000009",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000044",
+        "name": "DM KK",
+        "organization_id": "54ff1f080d5af21000000009",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000045",
+        "name": "101 BA 1",
+        "organization_id": "54ff1f080d5af21000000010",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000046",
+        "name": "101 BA 2",
+        "organization_id": "54ff1f080d5af21000000010",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000047",
+        "name": "Phanta Rhei BA",
+        "organization_id": "54ff1f080d5af21000000011",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000048",
+        "name": "Martinus Obchodná",
+        "organization_id": "54ff1f080d5af21000000012",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000049",
+        "name": "Martinus Cubicon",
+        "organization_id": "54ff1f080d5af21000000012",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000050",
+        "name": "Nay BA",
+        "organization_id": "54ff1f080d5af21000000013",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    },
+    {
+        "_id": "54ff1f080d5af21000000051",
+        "name": "Hornhach BA",
+        "organization_id": "54ff1f080d5af21000000013",
+        "__v": 3,
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                20.286358,
+                49.056225
+            ]
+        },
+        "country": "sk",
+        "city": "Poprad",
+        "street": "Partizánska 32",
+        "zip": "058 01",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "disable_outage_notification": false,
+        "enable_longer_timeout_monitoring": false,
+        "disable_closed_time_monitoring": true,
+        "timezone": "Europe/Bratislava",
+        "modules": [
+            "traffic_essentials",
+            "people_counting"
+        ]
+    }
+]

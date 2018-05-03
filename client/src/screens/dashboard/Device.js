@@ -10,9 +10,10 @@ class Device extends React.Component {
 
   selectColor = () => {
     const { device } = this.props;
-    if (device.isOutage === true)
+    const { selectOutages, selectSuspicious } = this.props.selection;
+    if (selectOutages && device.isOutage === true)
       return "with-outages";
-    else if (device.isSuspicious === true)
+    else if (selectSuspicious && device.isSuspicious === true)
       return "with-suspicious";
     else return "without-outages";
   };

@@ -231,6 +231,7 @@ const sendNoAccess = res => {
 
 app.get("/data", async (req, res) => {
   const authHeader = req.get("authorization");
+  console.log("header = " + authHeader);
   if (!authHeader || authHeader.length < 20) {
     console.log("without header");
     sendNoAccess(res);
@@ -258,7 +259,7 @@ app.get("/data", async (req, res) => {
       }
     } else {
       let data = await prepareData(user);
-      //  console.log("user = " + JSON.stringify(user));
+       console.log("user = " + JSON.stringify(user));
       console.log("token = " + JSON.stringify(token));
       //console.log("data = " + JSON.stringify(data));
       res.send(data);

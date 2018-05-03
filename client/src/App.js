@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import Login from "./screens/login/Login";
 import Dashboard from "./screens/dashboard/Dashboard";
@@ -13,10 +13,11 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <div className="App">
           <Router>
-            <div>
+            <Switch>
               <Route path="/login" component={Login} />
               <Route path="/dashboard" component={Dashboard} />
-            </div>
+              <Redirect from="/*" to="/dashboard" />
+            </Switch>
           </Router>
         </div>
       </ThemeProvider>

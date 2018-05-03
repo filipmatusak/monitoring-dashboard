@@ -1,0 +1,1680 @@
+[
+    {
+        "_id": "5630a5544d4c6a0000000400",
+        "type": "people_counter",
+        "uuid": "fcc2de300400",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Billa BA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000401",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Billa BA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300401",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000402",
+        "type": "people_counter",
+        "uuid": "fcc2de300402",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Billa KE",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000403",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Billa KE",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300403",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000404",
+        "type": "people_counter",
+        "uuid": "fcc2de300404",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Billa ZA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000405",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Billa ZA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300405",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000406",
+        "type": "people_counter",
+        "uuid": "fcc2de300406",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Billa TN",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000407",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Billa TN",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300407",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000408",
+        "type": "people_counter",
+        "uuid": "fcc2de300408",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Lidl ZA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000409",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Lidl ZA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300409",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000410",
+        "type": "people_counter",
+        "uuid": "fcc2de300410",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Lidl TN",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000411",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Lidl TN",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300411",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000412",
+        "type": "people_counter",
+        "uuid": "fcc2de300412",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Lidl TT",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000413",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Lidl TT",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300413",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000414",
+        "type": "people_counter",
+        "uuid": "fcc2de300414",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Lidl PO",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000415",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Lidl PO",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300415",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000416",
+        "type": "people_counter",
+        "uuid": "fcc2de300416",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Lidl BB",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000417",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Lidl BB",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300417",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000418",
+        "type": "people_counter",
+        "uuid": "fcc2de300418",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Lidl NZ",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000419",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Lidl NZ",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300419",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000420",
+        "type": "people_counter",
+        "uuid": "fcc2de300420",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 COOP PO",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000421",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC COOP PO",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300421",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000422",
+        "type": "people_counter",
+        "uuid": "fcc2de300422",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 COOP BY",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000423",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC COOP BY",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300423",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000424",
+        "type": "people_counter",
+        "uuid": "fcc2de300424",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 COOP GA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000425",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC COOP GA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300425",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000426",
+        "type": "people_counter",
+        "uuid": "fcc2de300426",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Terno ZA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000427",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Terno ZA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300427",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000428",
+        "type": "people_counter",
+        "uuid": "fcc2de300428",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Terno TN",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000429",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Terno TN",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300429",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000430",
+        "type": "people_counter",
+        "uuid": "fcc2de300430",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Terno TT",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000431",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Terno TT",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300431",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000432",
+        "type": "people_counter",
+        "uuid": "fcc2de300432",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Terno PO",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000433",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Terno PO",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300433",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000434",
+        "type": "people_counter",
+        "uuid": "fcc2de300434",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Terno BB",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000435",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Terno BB",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300435",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000436",
+        "type": "people_counter",
+        "uuid": "fcc2de300436",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Terno NZ",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000437",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Terno NZ",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300437",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000438",
+        "type": "people_counter",
+        "uuid": "fcc2de300438",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Kaufland BA 2",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000439",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Kaufland BA 2",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300439",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000437",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Terno NZ",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300437",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000440",
+        "type": "people_counter",
+        "uuid": "fcc2de300440",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Kaufland BA 1",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000441",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Kaufland BA 1",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300441",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000442",
+        "type": "people_counter",
+        "uuid": "fcc2de300442",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Tesco BA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000443",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Tesco BA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300443",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000444",
+        "type": "people_counter",
+        "uuid": "fcc2de300444",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Tesco TT",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000445",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Tesco TT",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300445",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000446",
+        "type": "people_counter",
+        "uuid": "fcc2de300446",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Metro BB 1",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000447",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Metro BB 1",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300447",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000448",
+        "type": "people_counter",
+        "uuid": "fcc2de300448",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Metro KE",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000449",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Metro KE",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300449",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000450",
+        "type": "people_counter",
+        "uuid": "fcc2de300450",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 CBA KE",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000451",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC CBA KE",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300451",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000449",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Metro KE",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300449",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000452",
+        "type": "people_counter",
+        "uuid": "fcc2de300452",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Teta BA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000453",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Teta BA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300453",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000454",
+        "type": "people_counter",
+        "uuid": "fcc2de300454",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Teta BA2",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000455",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Teta BA2",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300455",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000456",
+        "type": "people_counter",
+        "uuid": "fcc2de300456",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 DM BA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000457",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC DM BA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300457",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000458",
+        "type": "people_counter",
+        "uuid": "fcc2de300458",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 DM KK",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000459",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC DM KK",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300459",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000460",
+        "type": "people_counter",
+        "uuid": "fcc2de300460",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 101 BA 1",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000461",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC 101 BA 1",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300461",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000462",
+        "type": "people_counter",
+        "uuid": "fcc2de300462",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 101 BA 2",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000463",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC 101 BA 2",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300463",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000464",
+        "type": "people_counter",
+        "uuid": "fcc2de300464",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Phanta Rhei BA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000465",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Phanta Rhei BA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300465",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000466",
+        "type": "people_counter",
+        "uuid": "fcc2de300466",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Martinus Obchodná",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000467",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Martinus Obchodná",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300467",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000468",
+        "type": "people_counter",
+        "uuid": "fcc2de300468",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Martinus Cubicon",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000469",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Martinus Cubicon",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300469",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000470",
+        "type": "people_counter",
+        "uuid": "fcc2de300470",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Nay BA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000471",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Nay BA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300471",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000472",
+        "type": "people_counter",
+        "uuid": "fcc2de300472",
+        "model": "axis-321",
+        "__v": 0,
+        "name": "peoplecounter001 Hornhach BA",
+        "description": "T0216",
+        "sn": "fcc2de3f4821",
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    },
+    {
+        "_id": "5630a5544d4c6a0000000473",
+        "type": "access_point",
+        "model": "meraki-mr66",
+        "name": "AC Hornhach BA",
+        "sn": "Q2CK-D7R4-NF29",
+        "uuid": "fcc2de300473",
+        "__v": 1,
+        "location": {
+            "coordinates": [
+                20.286153964698315,
+                49.056201729387894
+            ],
+            "type": "Point"
+        },
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "monitoring": {
+            "data_expected": true,
+            "last_ips": [],
+            "last_heartbeat_at": "2017-06-06T12:58:46.383Z",
+            "last_data_at": "2017-06-06T12:58:46.383Z",
+            "status": "ok"
+        },
+        "active": true
+    }
+]

@@ -1,0 +1,107 @@
+[
+    {
+        "_id": "54ff1f080d5af21000000000",
+        "name": "Billa",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000001",
+        "name": "Lidl",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000002",
+        "name": "COOP",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000003",
+        "name": "Terno",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000004",
+        "name": "Kaufland",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000005",
+        "name": "Tesco",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000006",
+        "name": "Metro",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000007",
+        "name": "CBA",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000008",
+        "name": "Teta",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000009",
+        "name": "DM",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000010",
+        "name": "101",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000011",
+        "name": "Phanta Rhei",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000012",
+        "name": "Martinus",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000013",
+        "name": "NAY",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    },
+    {
+        "_id": "54ff1f080d5af21000000014",
+        "name": "Hornbach",
+        "__v": 0,
+        "seller_id": "590addeba8c7dd000ebe6f2d",
+        "wifi_mac_salt": "591d6e902a64e1fb00000000"
+    }
+]
