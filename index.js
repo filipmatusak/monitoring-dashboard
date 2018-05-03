@@ -58,8 +58,10 @@ send(devices, "/devices");
 send(allocations, "/allocations");
 send(outages, "/outages");
 send(users, "/users");
+*/
 
-app.use(bodyParser.json());*/
+
+app.use(bodyParser.json());
 
 const getUserFromAuth = access_token => {
   return new Promise((resolve, reject) => {
