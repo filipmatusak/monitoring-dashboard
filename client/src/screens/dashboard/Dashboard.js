@@ -1,28 +1,19 @@
 import React, { Component } from "react";
-import axios from "axios";
-import jwt from "../../util/jwt";
 import ProgressBar from "react-toolbox/lib/progress_bar";
 import { Accordion } from "react-accessible-accordion";
 import Checkbox from "react-toolbox/lib/checkbox";
 import Organization from "./Organization";
+import { logOut, withToken } from "../../util/auth";
 
 import "./style.css";
 
 class Dashboard extends Component {
   fetchData = () => {
-    const token = jwt.getToken();
-    console.log(token);
     this.setState({
       loading: true
     });
-    return axios
-      .request("GET", {
-        url: "/data",
-        headers: {
-          authorization: "Bearer " + token,
-          "content-type": "application/json"
-        }
-      })
+
+    return withToken("GET", "/data", { "content-type": "application/json" })
       .then(data => {
         this.setState({
           loading: false
@@ -74,7 +65,6 @@ class Dashboard extends Component {
       return data
         .map(org => {
           org.operations = org.operations.map(op => {
-
             op.devices = op.devices.filter(
               d =>
                 (ok && !d.isOutage && !d.isSuspicious) ||
@@ -96,7 +86,6 @@ class Dashboard extends Component {
 
             return op;
           });
-
 
           org.operations = org.operations.filter(
             op =>
@@ -127,31 +116,9 @@ class Dashboard extends Component {
           org =>
             org.operations.length > 0 &&
             ((ok && org.organization.okOperations > 0) ||
-              (out &&
-                org.organization.operationsWithOutages > 0) ||
+              (out && org.organization.operationsWithOutages > 0) ||
               (sus && org.organization.operationsWithSuspicious > 0))
         );
-  };
-
-  logOut = credentials => {
-    const token = jwt.getToken();
-    let dashboard = this;
-    axios
-      .request("POST", {
-        url: "/logout",
-        headers: {
-          authorization: "Bearer " + token,
-          "content-type": "application/json"
-        }
-      })
-      .then(data => {
-        console.log("logout");
-        jwt.invalidate();
-        this.props.history.push("/login");
-      })
-      .catch(function (e, c, d) {
-        return;
-      });
   };
 
   handleChange = field => {
@@ -254,11 +221,11 @@ class Dashboard extends Component {
                 onChange={this.handleChange.bind(this, "selectSuspicious")}
               />
             </div>
-            <button className="logout-button" onClick={this.logOut}>
+            <button className="logout-button" onClick={logOut.bind(this)}>
               Logout
             </button>
           </div>
-          <div className='dashboard-content'>
+          <div className="dashboard-content">
             <div className="dashboard-wrapper">
               <Accordion accordion={false}>
                 {data.map(group => {

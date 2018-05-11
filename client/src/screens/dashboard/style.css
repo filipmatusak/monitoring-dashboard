@@ -228,7 +228,7 @@
 
 .with-outages {
  /* background-color: #ff0000;*/
-  background: linear-gradient(-90deg, rgb(255, 255, 255) 50%, #ff0000de);
+  background: linear-gradient(-90deg, rgb(255, 255, 255) 30%, #ff0000de);
 }
 
 .with-outages:hover {
@@ -238,7 +238,7 @@
 
 .with-suspicious {
   background-color: #ffd900;
-  background: linear-gradient(-90deg,  #fff 50%, #ffd900);
+  background: linear-gradient(-90deg,  #fff 30%, #ffd900);
 
 }
 

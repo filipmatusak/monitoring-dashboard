@@ -4,14 +4,23 @@ import {
   saveRefreshToken,
   removeRefreshToken,
   getRefreshToken
-} from "./server/util/cache";
-import jwt from "./server/util/jwt";
-import organizations from "./demo/organizations.json";
+} from "./server/cache";
+import jwt from "./server/jwt";
 import operations from "./demo/operations.json";
-import devices from "./demo/devices.json";
-import allocations from "./demo/allocations.json";
-import outages from "./demo/outages.json";
-import users from "./demo/users.json";
+import { createData } from "./server/demo";
+import {
+  authApiUrl,
+  directoryUrl,
+  oauthPublicKey,
+  demo
+} from "./server/config";
+import {
+  singInAuth,
+  refreshAccessToken,
+  testToken,
+  getUserFromAuth,
+  sendNoAccess
+} from "./server/auth";
 
 const express = require("express");
 const http = require("http");
@@ -26,101 +35,9 @@ const HOST = "0.0.0.0";
 
 const app = express();
 
-const authApiUrl = process.env.AUTH_URL;
-const directoryUrl = process.env.DIRECTORY_URL;
-const oauthPublicKey = process.env.OAUTH_PUBLIC_KEY;
-
-/*
-const send = (data, path) => {
-  data.map(obj => {
-    request.post(
-      {
-        headers: {
-          "content-type": "application/json"
-        },
-        url: directoryUrl + path,
-        body: JSON.stringify(obj)
-      },
-      function(err, response, body) {
-        if (err) {
-          console.log(path);
-          console.log(body);
-          console.log(err);
-        }
-      }
-    );
-  });
-};
-
-send(organizations, "/organizations");
-send(operations, "/operations");
-send(devices, "/devices");
-send(allocations, "/allocations");
-send(outages, "/outages");
-send(users, "/users");
-*/
-
-
 app.use(bodyParser.json());
 
-const getUserFromAuth = access_token => {
-  return new Promise((resolve, reject) => {
-    request.get(
-      {
-        headers: {
-          "content-type": "application/json",
-          Authorization: "Bearer " + access_token
-        },
-        url: authApiUrl + "/users/me"
-      },
-      function(err, response, body) {
-        let res = JSON.parse(body);
-        res.operation_ids = operations.map(op => op._id);
-        resolve(res);
-      }
-    );
-  });
-};
-
-const refreshAccessToken = refresh_token => {
-  console.log("refresh_token in f");
-  console.log(refresh_token);
-  console.log(authApiUrl + "/oauth/token");
-  return new Promise((resolve, reject) => {
-    request.post(
-      {
-        headers: {
-          "content-type": "application/json"
-        },
-        url: authApiUrl + "/oauth/token",
-        body: JSON.stringify({
-          grant_type: "refresh_token",
-          refresh_token: refresh_token
-        })
-      },
-      function(err, response, body) {
-        console.log(err);
-        console.log(body);
-        resolve(JSON.parse(body));
-      }
-    );
-  });
-};
-
-const singInAuth = creadentials => {
-  return new Promise((resolve, reject) => {
-    request.post(
-      {
-        headers: { "content-type": "application/json" },
-        url: authApiUrl + "/oauth/sign_in",
-        body: JSON.stringify(creadentials)
-      },
-      function(err, response, body) {
-        resolve(JSON.parse(body));
-      }
-    );
-  });
-};
+if (demo) createData();
 
 const getAllocationsForOperation = operation_id => {
   return new Promise((resolve, reject) => {
@@ -261,49 +178,14 @@ const prepareData = async user => {
   return data;
 };
 
-const sendNoAccess = res => {
-  res.status(401).json({
-    errorType: "No access",
-    errorMessage: "Invalid email or password"
-  });
-};
-
 app.get("/data", async (req, res) => {
-  const authHeader = req.get("authorization");
-  console.log("header = " + authHeader);
-  if (!authHeader || authHeader.length < 20) {
-    console.log("without header");
-    sendNoAccess(res);
-  } else {
-    const token = authHeader.split(" ")[1];
+  console.log("get data");
+  testToken(req, res, async token => {
     let user = await getUserFromAuth(token);
-    //  console.log("user = " + JSON.stringify(user));
-    if (user.error) {
-      // try refresh token
-      const refreshToken = getRefreshToken(token);
-      console.log("from cache = " + refreshToken);
-      if (refreshToken === null || refreshToken === undefined) {
-        console.log("without refresh token");
-        sendNoAccess(res);
-      } else {
-        console.log("refresh token = " + refreshToken);
-        let freshToken = await refreshAccessToken(refreshToken);
-        console.log("fresh token = " + freshToken);
-        saveRefreshToken(freshToken);
-        user = await getUserFromAuth(freshToken.access_token);
-        let data = await prepareData(user);
-        console.log("user = " + JSON.stringify(user));
-        //console.log("token = " + JSON.stringify(freshToken));
-        res.send(data);
-      }
-    } else {
-      let data = await prepareData(user);
-      console.log("user = " + JSON.stringify(user));
-      console.log("token = " + JSON.stringify(token));
-      //console.log("data = " + JSON.stringify(data));
-      res.send(data);
-    }
-  }
+    let data = await prepareData(user);
+
+    res.send(data);
+  });
 });
 
 app.post("/login", async (req, res) => {

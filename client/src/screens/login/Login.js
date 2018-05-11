@@ -2,9 +2,7 @@ import React, { Component } from "react";
 //import cssModules from 'react-css-modules';
 import Input from "react-toolbox/lib/input/Input";
 import Button from "react-toolbox/lib/button/Button";
-import axios from "axios";
-import jwt from "../../util/jwt";
-
+import { signIn } from "../../util/auth";
 import "./loginStyle.css";
 
 class Login extends Component {
@@ -21,39 +19,6 @@ class Login extends Component {
       [name]: value
     });
   }
-
-  signIn = credentials => {
-    // console.log("creadentials = " + credentials);
-    let dashboard = this;
-    axios
-      .post(`/login`, credentials)
-      .then(data => {
-        dashboard.setState({
-          isSigningIn: true
-        });
-
-        jwt.setToken(data.data.token);
-
-        // Redirect to origin path if present
-        if (window.location.search) {
-          const originPath = decodeURIComponent(
-            window.location.search.split("=")[1]
-          );
-          this.props.history.push(originPath);
-          console.log("originPath = " + originPath);
-        } else {
-          console.log("push");
-          this.props.history.push("/dashboard");
-        }
-
-        return data.user;
-      }).catch(function(e, c ,d) {
-        dashboard.setState({
-          errorMessage: e.response.data.errorMessage
-        });
-        return;
-      });
-  };
 
   render() {
     return (
@@ -72,9 +37,9 @@ class Login extends Component {
           <form
             onSubmit={e => {
               e.preventDefault();
-
+              console.log(this);
               if (this.state.username && this.state.password) {
-                this.signIn({
+                signIn.bind(this)({
                   username: this.state.username.trim(),
                   password: this.state.password.trim()
                 });
