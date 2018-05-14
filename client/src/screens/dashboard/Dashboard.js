@@ -84,8 +84,8 @@ class Dashboard extends Component {
       selectOutages: out,
       selectSuspicious: sus
     } = selection;
-    console.log("selection");
-    console.log(selection);
+    //console.log("selection");
+    //console.log(selection);
 
     data.forEach(org => {
       org.operations.forEach(op => {
@@ -158,9 +158,9 @@ class Dashboard extends Component {
     return str && str.toLowerCase().includes(pattern.toLowerCase());
   };
 
-  handleSearchChange = (search, data) => {
-    console.log("search");
-    console.log(search);
+  setSearchForTree = (search, data) => {
+    //console.log("search");
+    //console.log(search);
     const match = this.match;
     data.filter(x => x.isSelected).forEach(org => {
       org.isSearched = false;
@@ -211,11 +211,16 @@ class Dashboard extends Component {
       }
     });
 
+    return data;
+  };
+
+  handleSearchChange = (search, data) => {
+    let newData = this.setSearchForTree(search, data)
     this.setState({
-      data: this.state.data,
+      data: newData,
       selection: Object.assign(this.state.selection, { search: search })
     });
-  };
+  }
 
   handleSelectionChange = (field, value) => {
     let {
@@ -259,6 +264,13 @@ class Dashboard extends Component {
       if (field === "selectSuspicious") selectSuspicious = !selectSuspicious;
     }
 
+    let newData = this.setVisibilityForTree(this.state.data, {
+      selectAll,
+      selectOK,
+      selectOutages,
+      selectSuspicious
+    });
+
     this.setState({
       selection: {
         selectAll,
@@ -268,12 +280,7 @@ class Dashboard extends Component {
         selectSuspicious,
         search
       },
-      data: this.setVisibilityForTree(this.state.data, {
-        selectAll,
-        selectOK,
-        selectOutages,
-        selectSuspicious
-      })
+      data: this.setSearchForTree(search, newData)
     });
   };
 

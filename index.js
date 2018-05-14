@@ -121,7 +121,7 @@ const getOutages = operation_id => {
 
 const prepareData = async user => {
   const operations = await Promise.all(
-    user.operation_ids.slice(1, 50).map(async operation_id => {
+    user.operation_ids/*.slice(1, 50)*/.map(async operation_id => {
       const operation = await getOperation(operation_id);
       const outages = await getOutages(operation_id);
       const allocations = await getAllocationsForOperation(operation_id);
@@ -153,8 +153,6 @@ const prepareData = async user => {
     })
   );
 
-  console.log(operations);
-
   let grouped = groupArray(operations, "operation.organization_id");
 
   let data = await Promise.all(
@@ -181,13 +179,13 @@ const prepareData = async user => {
 };
 
 app.get("/data", async (req, res) => {
-  console.log("get data");
+ // console.log("get data");
   testToken(req, res, async token => {
-    console.log("getting data");
+  //  console.log("getting data");
     let user = await getUserFromAuth(token);
-    console.log(user);
+   // console.log(user);
     let data = await prepareData(user);
-    console.log(data);
+  //  console.log(data);
     res.send(data);
   });
 });
