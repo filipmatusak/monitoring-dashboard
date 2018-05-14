@@ -21,8 +21,8 @@ class Organization extends React.Component {
   };
 
   onChange = (key) => {
-    let changed = this.props.group.operations.filter(x => x.isSelected)[key];
-    changed.isExpanded = !changed.isExpanded
+    /*let changed = this.props.group.operations.filter(x => x.isSelected)[key];
+    changed.isExpanded = !changed.isExpanded*/
   }
 
   render() {
@@ -49,7 +49,7 @@ class Organization extends React.Component {
         </AccordionItemTitle>
         <AccordionItemBody>
           <Accordion accordion={false}>
-            {operations.filter(x => x.isSelected).map(op => (
+            {operations.filter(x => x.isSelected && x.isSearched).map(op => (
               <Operation
                 operation={op.operation}
                 devices={op.devices}

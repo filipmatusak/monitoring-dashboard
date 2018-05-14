@@ -39,12 +39,28 @@ class Dashboard extends Component {
     }
   };
 
-  setExpandedFalse = (data) => {
-    data.map(org => org.isExpanded = false);
-    data.map(org => org.operations.map(op => op.isExpanded = false));
+  setExpandedFalse = data => {
+    data.forEach(org => {
+      org.isExpanded = false;
+      org.isSearched = true;
+    });
+    data.forEach(org =>
+      org.operations.forEach(op => {
+        op.isExpanded = false;
+        op.isSearched = true;
+      })
+    );
+    data.forEach(org =>
+      org.operations.forEach(op =>
+        op.devices.forEach(d => {
+          d.isExpanded = false;
+          d.isSearched = true;
+        })
+      )
+    );
 
     return data;
-  }
+  };
 
   async componentDidMount() {
     const data = await this.fetchData();
@@ -54,7 +70,9 @@ class Dashboard extends Component {
       return;
     } else {
       this.setState({
-        data: this.setExpandedFalse(this.setVisibilityForTree(data.data, this.state.selection))
+        data: this.setExpandedFalse(
+          this.setVisibilityForTree(data.data, this.state.selection)
+        )
       });
     }
   }
@@ -136,6 +154,69 @@ class Dashboard extends Component {
     return data;
   };
 
+  match = (str, pattern) => {
+    return str && str.toLowerCase().includes(pattern.toLowerCase());
+  };
+
+  handleSearchChange = (search, data) => {
+    console.log("search");
+    console.log(search);
+    const match = this.match;
+    data.filter(x => x.isSelected).forEach(org => {
+      org.isSearched = false;
+
+      if (
+        match(org.organization.name, search) ||
+        match(org.organization._id, search)
+      ) {
+        org.isSearched = true;
+        org.isExpanded = false;
+        org.operations.filter(x => x.isSelected).forEach(op => {
+          op.isSearched = true;
+          op.isExpanded = false;
+          op.devices
+            .filter(x => x.isSelected)
+            .forEach(d => (d.isSearched = true));
+        });
+      } else {
+        org.operations.filter(x => x.isSelected).forEach(op => {
+          op.isSearched = false;
+
+          if (
+            match(op.operation.name, search) ||
+            match(op.operation._id, search)
+          ) {
+            org.isSearched = true;
+            org.isExpanded = true;
+            op.isSearched = true;
+            op.isExpanded = false;
+          } else {
+            
+            op.devices.filter(x => x.isSelected).forEach(d => {
+              if (
+                match(d.name, search) ||
+                match(d.sn, search) ||
+                match(d.uuid, search)
+              ) {
+                d.isSearched = true;
+                d.isExpanded = false;
+                op.isSearched = true;
+                op.isExpanded = true;
+                org.isSearched = true;
+                org.isExpanded = true;
+              } else d.isSearched = d.isExpanded = false;
+            });
+          }
+        });
+      }
+    });
+
+    this.setState({
+      data: this.state.data,
+      selection: Object.assign(this.state.selection, { search: search })
+    });
+  };
+
   handleSelectionChange = (field, value) => {
     let {
       selectAll,
@@ -196,13 +277,7 @@ class Dashboard extends Component {
     });
   };
 
-  onChange = (key) => {
-  /*  console.log(key);
-    console.log(this.state.data);
-    let changed = this.state.data.filter(x => x.isSelected)[key];
-
-    changed.isExpanded = !changed.isExpanded*/
-  }
+  onChange = key => {};
 
   render() {
     console.log("render");
@@ -241,14 +316,20 @@ class Dashboard extends Component {
               <Checkbox
                 checked={selectOutages}
                 label="Outages"
-                onChange={this.handleSelectionChange.bind(this, "selectOutages")}
+                onChange={this.handleSelectionChange.bind(
+                  this,
+                  "selectOutages"
+                )}
               />
             </div>
             <div className="checkbox-wrapper">
               <Checkbox
                 checked={selectSuspicious}
                 label="Suspicious"
-                onChange={this.handleSelectionChange.bind(this, "selectSuspicious")}
+                onChange={this.handleSelectionChange.bind(
+                  this,
+                  "selectSuspicious"
+                )}
               />
             </div>
             <button className="logout-button" onClick={logOut.bind(this)}>
@@ -263,11 +344,11 @@ class Dashboard extends Component {
                   type="search"
                   hint={search === "" ? "Search" : null}
                   value={search}
-                  onChange={value => this.handleChange("search", value)}
+                  onChange={value => this.handleSearchChange(value, data)}
                 />
               </div>
               <Accordion accordion={false} onChange={this.onChange}>
-                {data.filter(x => x.isSelected).map(group => {
+                {data.filter(x => x.isSelected && x.isSearched).map(group => {
                   return (
                     <Organization
                       group={group}

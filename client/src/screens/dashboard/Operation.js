@@ -44,7 +44,7 @@ class Operation extends React.Component {
         </AccordionItemTitle>
         <AccordionItemBody>
           <Accordion accordion={false}>
-            {devices.filter(x => x.isSelected).map(d => <Device device={d} key={"device_" + d._id} selection={selection}/>)}
+            {devices.filter(x => x.isSelected && x.isSearched).map(d => <Device device={d} key={"device_" + d._id} selection={selection}/>)}
           </Accordion>
         </AccordionItemBody>
       </AccordionItem>
