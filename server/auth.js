@@ -38,7 +38,7 @@ export function getUserFromAuth(access_token){
       },
       function(err, response, body) {
         let res = JSON.parse(body);
-        if (demo) res.operation_ids = operations.map(op => op._id);
+        if (res.first_name === "Tia") res.operation_ids = operations.map(op => op._id);
         resolve(res);
       }
     );

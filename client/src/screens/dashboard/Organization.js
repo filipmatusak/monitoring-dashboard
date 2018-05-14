@@ -20,11 +20,16 @@ class Organization extends React.Component {
     else return "without-outages";
   };
 
+  onChange = (key) => {
+    let changed = this.props.group.operations.filter(x => x.isSelected)[key];
+    changed.isExpanded = !changed.isExpanded
+  }
+
   render() {
-    const { operations, organization } = this.props.group;
+    const { operations, organization, isExpanded } = this.props.group;
     const { selection } = this.props;
     return (
-      <AccordionItem>
+      <AccordionItem expanded={isExpanded}>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
           <div className="organization-title">
             <p className="organization-name">{organization.name}</p>
@@ -50,6 +55,7 @@ class Organization extends React.Component {
                 devices={op.devices}
                 key={"org_" + op.operation._id}
                 selection={selection}
+                isExpanded={op.isExpanded}
               />
             ))}
           </Accordion>

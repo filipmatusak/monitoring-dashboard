@@ -20,9 +20,9 @@ class Operation extends React.Component {
   };
 
   render() {
-    const { devices, operation, selection } = this.props;
+    const { devices, operation, selection, isExpanded } = this.props;
     return (
-      <AccordionItem>
+      <AccordionItem expanded={isExpanded}>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
           <div className="operation-title">
             <p className="operation-name">{operation.name}</p>

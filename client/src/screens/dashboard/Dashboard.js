@@ -39,6 +39,13 @@ class Dashboard extends Component {
     }
   };
 
+  setExpandedFalse = (data) => {
+    data.map(org => org.isExpanded = false);
+    data.map(org => org.operations.map(op => op.isExpanded = false));
+
+    return data;
+  }
+
   async componentDidMount() {
     const data = await this.fetchData();
 
@@ -47,7 +54,7 @@ class Dashboard extends Component {
       return;
     } else {
       this.setState({
-        data: this.setVisibilityForTree(data.data, this.state.selection)
+        data: this.setExpandedFalse(this.setVisibilityForTree(data.data, this.state.selection))
       });
     }
   }
@@ -129,7 +136,7 @@ class Dashboard extends Component {
     return data;
   };
 
-  handleChange = (field, value) => {
+  handleSelectionChange = (field, value) => {
     let {
       selectAll,
       selectOK,
@@ -189,6 +196,14 @@ class Dashboard extends Component {
     });
   };
 
+  onChange = (key) => {
+  /*  console.log(key);
+    console.log(this.state.data);
+    let changed = this.state.data.filter(x => x.isSelected)[key];
+
+    changed.isExpanded = !changed.isExpanded*/
+  }
+
   render() {
     console.log("render");
     console.log(this.state);
@@ -212,28 +227,28 @@ class Dashboard extends Component {
               <Checkbox
                 checked={selectAll}
                 label="All"
-                onChange={this.handleChange.bind(this, "selectAll")}
+                onChange={this.handleSelectionChange.bind(this, "selectAll")}
               />
             </div>
             <div className="checkbox-wrapper">
               <Checkbox
                 checked={selectOK}
                 label="OK"
-                onChange={this.handleChange.bind(this, "selectOK")}
+                onChange={this.handleSelectionChange.bind(this, "selectOK")}
               />
             </div>
             <div className="checkbox-wrapper">
               <Checkbox
                 checked={selectOutages}
                 label="Outages"
-                onChange={this.handleChange.bind(this, "selectOutages")}
+                onChange={this.handleSelectionChange.bind(this, "selectOutages")}
               />
             </div>
             <div className="checkbox-wrapper">
               <Checkbox
                 checked={selectSuspicious}
                 label="Suspicious"
-                onChange={this.handleChange.bind(this, "selectSuspicious")}
+                onChange={this.handleSelectionChange.bind(this, "selectSuspicious")}
               />
             </div>
             <button className="logout-button" onClick={logOut.bind(this)}>
@@ -251,7 +266,7 @@ class Dashboard extends Component {
                   onChange={value => this.handleChange("search", value)}
                 />
               </div>
-              <Accordion accordion={false}>
+              <Accordion accordion={false} onChange={this.onChange}>
                 {data.filter(x => x.isSelected).map(group => {
                   return (
                     <Organization

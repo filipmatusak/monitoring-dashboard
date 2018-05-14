@@ -20,6 +20,7 @@ class Device extends React.Component {
 
   render() {
     const { device } = this.props;
+    device.daco = "nazdar";
     return (
       <AccordionItem disabled={false}>
         <AccordionItemTitle className={"accordion-title " + this.selectColor()}>
