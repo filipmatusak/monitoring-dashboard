@@ -153,6 +153,8 @@ const prepareData = async user => {
     })
   );
 
+  console.log(operations);
+
   let grouped = groupArray(operations, "operation.organization_id");
 
   let data = await Promise.all(
@@ -181,9 +183,11 @@ const prepareData = async user => {
 app.get("/data", async (req, res) => {
   console.log("get data");
   testToken(req, res, async token => {
+    console.log("getting data");
     let user = await getUserFromAuth(token);
+    console.log(user);
     let data = await prepareData(user);
-
+    console.log(data);
     res.send(data);
   });
 });

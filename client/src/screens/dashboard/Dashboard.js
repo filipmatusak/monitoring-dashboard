@@ -4,6 +4,7 @@ import { Accordion } from "react-accessible-accordion";
 import Checkbox from "react-toolbox/lib/checkbox";
 import Organization from "./Organization";
 import { logOut, withToken } from "../../util/auth";
+import Input from "react-toolbox/lib/input/Input";
 
 import "./style.css";
 
@@ -33,7 +34,8 @@ class Dashboard extends Component {
       selectOK: true,
       selectOutages: true,
       selectSuspicious: true,
-      selectedCount: 3
+      selectedCount: 3,
+      search: ""
     }
   };
 
@@ -45,7 +47,6 @@ class Dashboard extends Component {
       return;
     } else {
       this.setState({
-        originData: data.data,
         data: this.setVisibilityForTree(data.data, this.state.selection)
       });
     }
@@ -60,74 +61,82 @@ class Dashboard extends Component {
     } = selection;
     console.log("selection");
     console.log(selection);
-    if (all) return data;
-    else
-      return data
-        .map(org => {
-          org.operations = org.operations.map(op => {
-            op.devices = op.devices.filter(
-              d =>
-                (ok && !d.isOutage && !d.isSuspicious) ||
-                (out && d.isOutage) ||
-                (sus && d.isSuspicious)
-            );
 
-            op.operation.outagesCount = op.operation.outages.filter(
-              o =>
-                op.devices.find(d => o.device_id === d._id) &&
-                o.severity === "outage"
-            ).length;
-
-            op.operation.suspiciousCount = op.operation.outages.filter(
-              o =>
-                op.devices.find(d => o.device_id === d._id) &&
-                o.severity === "suspicious"
-            ).length;
-
-            return op;
-          });
-
-          org.operations = org.operations.filter(
-            op =>
-              op.devices.length > 0 &&
-              ((ok &&
-                op.operation.suspiciousCount === 0 &&
-                op.operation.outagesCount === 0) ||
-                (out && op.operation.outagesCount > 0) ||
-                (sus && op.operation.suspiciousCount > 0))
-          );
-
-          org.organization.operationsCount = org.operations.length;
-          org.organization.okOperations = org.operations.filter(
-            op =>
-              op.operation.outagesCount === 0 &&
-              op.operation.suspiciousCount === 0
-          ).length;
-          org.organization.operationsWithOutages = org.operations.filter(
-            op => op.operation.outagesCount > 0
-          ).length;
-          org.organization.operationsWithSuspicious = org.operations.filter(
-            op => op.operation.suspiciousCount > 0
-          ).length;
-
-          return org;
-        })
-        .filter(
-          org =>
-            org.operations.length > 0 &&
-            ((ok && org.organization.okOperations > 0) ||
-              (out && org.organization.operationsWithOutages > 0) ||
-              (sus && org.organization.operationsWithSuspicious > 0))
+    data.forEach(org => {
+      org.operations.forEach(op => {
+        op.devices.forEach(
+          d =>
+            (d.isSelected =
+              (ok && !d.isOutage && !d.isSuspicious) ||
+              (out && d.isOutage) ||
+              (sus && d.isSuspicious))
         );
+
+        op.operation.outagesCount = op.operation.outages.filter(
+          o =>
+            op.devices.find(d => d.isSelected && o.device_id === d._id) &&
+            o.severity === "outage"
+        ).length;
+
+        op.operation.suspiciousCount = op.operation.outages.filter(
+          o =>
+            op.devices.find(d => d.isSelected && o.device_id === d._id) &&
+            o.severity === "suspicious"
+        ).length;
+
+        return op;
+      });
+
+      org.operations.forEach(
+        op =>
+          (op.isSelected =
+            op.devices.filter(x => x.isSelected).length > 0 &&
+            ((ok &&
+              op.operation.suspiciousCount === 0 &&
+              op.operation.outagesCount === 0) ||
+              (out && op.operation.outagesCount > 0) ||
+              (sus && op.operation.suspiciousCount > 0)))
+      );
+
+      org.organization.operationsCount = org.operations.filter(
+        x => x.isSelected
+      ).length;
+
+      org.organization.okOperations = org.operations
+        .filter(x => x.isSelected)
+        .filter(
+          op =>
+            op.operation.outagesCount === 0 &&
+            op.operation.suspiciousCount === 0
+        ).length;
+      org.organization.operationsWithOutages = org.operations
+        .filter(x => x.isSelected)
+        .filter(op => op.operation.outagesCount > 0).length;
+      org.organization.operationsWithSuspicious = org.operations
+        .filter(x => x.isSelected)
+        .filter(op => op.operation.suspiciousCount > 0).length;
+    });
+
+    data.forEach(
+      org =>
+        (org.isSelected =
+          org.operations.length > 0 &&
+          ((ok && org.organization.okOperations > 0) ||
+            (out && org.organization.operationsWithOutages > 0) ||
+            (sus && org.organization.operationsWithSuspicious > 0)))
+    );
+
+    return data;
   };
 
-  handleChange = field => {
+  handleChange = (field, value) => {
     let {
       selectAll,
       selectOK,
       selectOutages,
       selectSuspicious,
-      selectedCount
+      selectedCount,
+      search
     } = this.state.selection;
 
     if (field === "selectAll") {
@@ -144,6 +153,8 @@ class Dashboard extends Component {
         selectSuspicious = false;
         selectedCount = 0;
       }
+    } else if (field === "search") {
+      search = value;
     } else {
       if (selectedCount === 3 && this.state.selection[field]) {
         selectAll = false;
@@ -166,17 +177,15 @@ class Dashboard extends Component {
         selectedCount,
         selectOK,
         selectOutages,
-        selectSuspicious
+        selectSuspicious,
+        search
       },
-      data: this.setVisibilityForTree(
-        JSON.parse(JSON.stringify(this.state.originData)),
-        {
-          selectAll,
-          selectOK,
-          selectOutages,
-          selectSuspicious
-        }
-      )
+      data: this.setVisibilityForTree(this.state.data, {
+        selectAll,
+        selectOK,
+        selectOutages,
+        selectSuspicious
+      })
     });
   };
 
@@ -184,7 +193,13 @@ class Dashboard extends Component {
     console.log("render");
     console.log(this.state);
     const { data, selection } = this.state;
-    const { selectAll, selectOK, selectOutages, selectSuspicious } = selection;
+    const {
+      selectAll,
+      selectOK,
+      selectOutages,
+      selectSuspicious,
+      search
+    } = selection;
     if (this.state.loading) {
       return <ProgressBar type="circular" mode="indeterminate" />;
     } else {
@@ -225,10 +240,19 @@ class Dashboard extends Component {
               Logout
             </button>
           </div>
+
           <div className="dashboard-content">
             <div className="dashboard-wrapper">
+              <div className="search-wrapper">
+                <Input
+                  type="search"
+                  hint={search === "" ? "Search" : null}
+                  value={search}
+                  onChange={value => this.handleChange("search", value)}
+                />
+              </div>
               <Accordion accordion={false}>
-                {data.map(group => {
+                {data.filter(x => x.isSelected).map(group => {
                   return (
                     <Organization
                       group={group}

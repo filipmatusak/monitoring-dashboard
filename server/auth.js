@@ -1,4 +1,7 @@
 import { authApiUrl, demo} from "./config";
+import { getRefreshToken } from "./cache";
+import operations from "../demo/operations.json";
+
 const request = require("request");
 
 export function sendNoAccess(res){

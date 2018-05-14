@@ -44,7 +44,7 @@ class Organization extends React.Component {
         </AccordionItemTitle>
         <AccordionItemBody>
           <Accordion accordion={false}>
-            {operations.map(op => (
+            {operations.filter(x => x.isSelected).map(op => (
               <Operation
                 operation={op.operation}
                 devices={op.devices}

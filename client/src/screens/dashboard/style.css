@@ -173,7 +173,7 @@
 .dashboard-wrapper {
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 4%;
+  padding-top: 2%;
   padding-bottom: 10%;
   background: #fff;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -228,7 +228,7 @@
 
 .with-outages {
  /* background-color: #ff0000;*/
-  background: linear-gradient(-90deg, rgb(255, 255, 255) 30%, #ff0000de);
+  background: linear-gradient(-90deg, rgb(255, 255, 255) 60%, #ff0000de);
 }
 
 .with-outages:hover {
@@ -238,7 +238,7 @@
 
 .with-suspicious {
   background-color: #ffd900;
-  background: linear-gradient(-90deg,  #fff 30%, #ffd900);
+  background: linear-gradient(-90deg,  #fff 60%, #ffd900);
 
 }
 
@@ -351,4 +351,9 @@
 .checkbox-wrapper span {
   color: beige;
   font-size: 1.8rem;
+}
+
+
+.search-wrapper {
+  margin: 1%;
 }
