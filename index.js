@@ -244,11 +244,8 @@ if (process.env.NODE_ENV === "development") {
 }
 
 async function startServer() {
-  app.use(express.static(path.join(__dirname, 'client/build')));
-  
   app.get("/*", async (req, res) => {
-    //res.send("Hello world");
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.send("Hello world");
   });
 
   let port = process.env.PORT || 3001
