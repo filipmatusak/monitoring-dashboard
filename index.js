@@ -245,18 +245,18 @@ if (process.env.NODE_ENV === "development") {
 }*/
 
 async function startServer() {
-  app.use(express.static('./client/build'));
+  app.use(express.static('/app/client/build'));
 
   app.get('*', (req, res) => {
-    res.sendFile('./client/build/index.html');
+    res.sendFile('/app/client/build/index.html');
   });
   
 
 
-
+/*
   app.get("/*", async (req, res) => {
     res.send("Hello world");
-  });
+  });*/
 
   let port = process.env.PORT || 3001
   app.listen(port, () => {
