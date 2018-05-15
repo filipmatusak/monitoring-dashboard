@@ -232,7 +232,7 @@ app.post("/logout", async (req, res) => {
 
   res.status(200).send();
 });
-
+/*
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
@@ -241,9 +241,18 @@ if (process.env.NODE_ENV === "development") {
   const args = ["start"];
   const opts = { stdio: null, cwd: "client", shell: true };
   require("child_process").spawn("npm", args, opts);
-}
+}*/
 
 async function startServer() {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  });
+  
+
+
+
   app.get("/*", async (req, res) => {
     res.send("Hello world");
   });
