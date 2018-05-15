@@ -166,8 +166,8 @@ class Dashboard extends Component {
       org.isSearched = false;
 
       if (
-        match(org.organization.name, search) ||
-        match(org.organization._id, search)
+        match(org.organization.name, search) /*||
+        match(org.organization._id, search)*/
       ) {
         org.isSearched = true;
         org.isExpanded = false;
@@ -183,8 +183,8 @@ class Dashboard extends Component {
           op.isSearched = false;
 
           if (
-            match(op.operation.name, search) ||
-            match(op.operation._id, search)
+            match(op.operation.name, search) /*||
+            match(op.operation._id, search)*/
           ) {
             org.isSearched = true;
             org.isExpanded = true;
@@ -195,7 +195,7 @@ class Dashboard extends Component {
             op.devices.filter(x => x.isSelected).forEach(d => {
               if (
                 match(d.name, search) ||
-                match(d.sn, search) ||
+              //  match(d.sn, search) ||
                 match(d.uuid, search)
               ) {
                 d.isSearched = true;
@@ -287,8 +287,8 @@ class Dashboard extends Component {
   onChange = key => {};
 
   render() {
-    console.log("render");
-    console.log(this.state);
+  //  console.log("render");
+  //  console.log(this.state);
     const { data, selection } = this.state;
     const {
       selectAll,

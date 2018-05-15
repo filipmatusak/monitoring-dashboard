@@ -1,6 +1,7 @@
 import { authApiUrl, demo} from "./config";
 import { getRefreshToken } from "./cache";
 import operations from "../demo/operations.json";
+import users from "../demo/users.json";
 
 const request = require("request");
 
@@ -11,22 +12,29 @@ export function sendNoAccess(res){
   });
 };
 
-export function singInAuth(creadentials){
+export function singInAuth(credentials){
   return new Promise((resolve, reject) => {
+    console.log(credentials);
+    if(credentials.username === "tiademo123@gmail.com" && credentials.password === "tia")
+      resolve({access_token: "1131c8d3a1v.1c3v1z31v1vc1vc3xzv12v48981vz8.v89b41b51c6bv8bc"});
+    else reject(); 
+  });
+  /*return new Promise((resolve, reject) => {
     request.post(
       {
         headers: { "content-type": "application/json" },
         url: authApiUrl + "/oauth/sign_in",
-        body: JSON.stringify(creadentials)
+        body: JSON.stringify(credentials)
       },
       function(err, response, body) {
         resolve(JSON.parse(body));
       }
     );
-  });
+  });*/
 };
 
 export function getUserFromAuth(access_token){
+  return users[0];
   return new Promise((resolve, reject) => {
     request.get(
       {

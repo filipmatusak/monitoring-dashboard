@@ -45,6 +45,9 @@ export function signIn(credentials) {
         thiz.props.history.push("/dashboard");
       }
 
+      console.log("data");
+      console.log(data);
+
       return data.user;
     })
     .catch(function(e, c, d) {

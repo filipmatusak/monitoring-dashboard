@@ -6,7 +6,12 @@ import {
   getRefreshToken
 } from "./server/cache";
 import jwt from "./server/jwt";
+import organizations from "./demo/organizations.json";
 import operations from "./demo/operations.json";
+import devices from "./demo/devices.json";
+import allocations from "./demo/allocations.json";
+import outages from "./demo/outages.json";
+import users from "./demo/users.json";
 import { createData } from "./server/demo";
 import {
   authApiUrl,
@@ -41,7 +46,9 @@ if (demo) createData();
 
 const getAllocationsForOperation = operation_id => {
   return new Promise((resolve, reject) => {
-    request.get(
+    resolve(allocations.filter(x => x.operation_id === operation_id));
+
+    /*request.get(
       {
         headers: { "content-type": "application/json" },
         url: directoryUrl + "/allocations?operation_id=" + operation_id
@@ -50,13 +57,15 @@ const getAllocationsForOperation = operation_id => {
         // take only active allocations
         resolve(JSON.parse(body).filter(b => !b.end_datetime));
       }
-    );
+    );*/
   });
 };
 
 const getDevice = device_id => {
   return new Promise((resolve, reject) => {
-    request.get(
+    resolve(devices.find(d => d._id === device_id));
+
+    /*request.get(
       {
         headers: { "content-type": "application/json" },
         url: directoryUrl + "/devices/" + device_id
@@ -64,13 +73,15 @@ const getDevice = device_id => {
       function(err, response, body) {
         resolve(JSON.parse(body));
       }
-    );
+    );*/
   });
 };
 
 const getOperation = operation_id => {
   return new Promise((resolve, reject) => {
-    request.get(
+    resolve(operations.find(x => x._id === operation_id));
+
+    /*request.get(
       {
         headers: { "content-type": "application/json" },
         url: directoryUrl + "/operations/" + operation_id
@@ -78,13 +89,15 @@ const getOperation = operation_id => {
       function(err, response, body) {
         resolve(JSON.parse(body));
       }
-    );
+    );*/
   });
 };
 
 const getOrganization = organization_id => {
   return new Promise((resolve, reject) => {
-    request.get(
+    resolve(organizations.find(x => x._id === organization_id));
+
+    /*request.get(
       {
         headers: { "content-type": "application/json" },
         url: directoryUrl + "/organizations/" + organization_id
@@ -92,7 +105,7 @@ const getOrganization = organization_id => {
       function(err, response, body) {
         resolve(JSON.parse(body));
       }
-    );
+    );*/
   });
 };
 
@@ -100,7 +113,9 @@ const getOutages = operation_id => {
   const d = new Date();
   const time = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   return new Promise((resolve, reject) => {
-    request.get(
+    resolve(outages.filter(x => x.operation_id === operation_id));
+
+    /*request.get(
       {
         headers: { "content-type": "application/json" },
         url:
@@ -115,7 +130,7 @@ const getOutages = operation_id => {
       function(err, response, body) {
         resolve(JSON.parse(body));
       }
-    );
+    );*/
   });
 };
 
@@ -199,7 +214,7 @@ app.post("/login", async (req, res) => {
       return;
     }
 
-    saveRefreshToken(token);
+   // saveRefreshToken(token);
 
     res.send({ token: token.access_token });
   } catch (err) {
