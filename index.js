@@ -245,10 +245,10 @@ if (process.env.NODE_ENV === "development") {
 }*/
 
 async function startServer() {
-  app.use(express.static('/app/client/build'));
+  app.use(express.static('/app/client/public'));
 
   app.get('*', (req, res) => {
-    res.sendFile('/app/client/build/index.html');
+    res.sendFile('/app/client/public/index.html');
   });
   
 
