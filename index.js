@@ -34,6 +34,7 @@ const zlib = require("zlib");
 const request = require("request");
 const bodyParser = require("body-parser");
 const groupArray = require("group-array");
+const path = require('path');
 
 const PORT = 3001;
 const HOST = "0.0.0.0";

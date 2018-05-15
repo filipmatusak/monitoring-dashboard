@@ -24,6 +24,7 @@
     "icheck": "^1.0.2",
     "jsonwebtoken": "^8.2.1",
     "memory-cache": "^0.2.0",
+    "path": "^0.12.7",
     "rc-checkbox": "^2.1.5",
     "react": "^16.3.2",
     "react-accessible-accordion": "^2.3.1",
